@@ -3,7 +3,7 @@
 <html>
     
 <head>
-    @yield('title')
+    
 
 </head>
 <body>
@@ -20,4 +20,3 @@
 
 
 
-Ik ben de progresspagina. Ik ben de eerste pagina die een student ziet als hij/zij inlogt.
