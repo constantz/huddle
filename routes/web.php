@@ -16,10 +16,18 @@ Route::get('/', function () {
 });
 
 Route::get('/progress', 'PagesController@progress');
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
 =======
 >>>>>>> 9965d4aa53818ef5e80fcfeb9a405b327f3c9a44
+=======
+Route::get('/students', 'PagesController@students');
+
+
+Route::resource('/users', 'UsersController');
+
+>>>>>>> Stashed changes
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
