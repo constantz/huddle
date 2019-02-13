@@ -10,4 +10,9 @@ class PagesController extends Controller
     {
         return view('progress');
     }
+
+    public function students()
+    {
+        return view('students');
+    }
 }
