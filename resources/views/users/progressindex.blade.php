@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <h1 class="title">Students</h1>
 
     <ul>
@@ -9,3 +12,4 @@
             </li>
         @endforeach
     </ul>
+    @endsection
