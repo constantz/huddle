@@ -16,7 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/progress', 'PagesController@progress');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9965d4aa53818ef5e80fcfeb9a405b327f3c9a44
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

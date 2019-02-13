@@ -19,8 +19,10 @@ class CreateTimetableTable extends Migration
             $table->date('date');
             $table->time('start_time');
             $table->time('end_time');
-            $table->integer('subject_id');
-            $table->integer('group_id');
+            $table->integer('subject_id')->unsigned();
+            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->integer('group_id')->unsigned();
+            $table->foreign('group_id')->references('id')->on('groups');
         });
     }
 

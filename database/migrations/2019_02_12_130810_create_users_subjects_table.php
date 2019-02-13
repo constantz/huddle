@@ -16,9 +16,11 @@ class CreateUsersSubjectsTable extends Migration
         Schema::create('users_subjects', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('user_id');
-            $table->integer('subject_id');
-            $table->boolean('passed');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('subject_id')->unsigned();
+            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->boolean('passed')->default(false);
         });
     }
 
