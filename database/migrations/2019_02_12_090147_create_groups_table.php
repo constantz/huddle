@@ -18,7 +18,7 @@ class CreateGroupsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('city');
-            $table->smallInteger('number_of_participants');
+            $table->smallInteger('number_of_participants')->unsigned();
 
         });
     }

@@ -16,10 +16,13 @@ class CreateSentMessagesTable extends Migration
         Schema::create('sent_messages', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('sender_id');
-            $table->integer('recipient_id');
-            $table->integer('message_id');
-            $table->boolean('read');
+            $table->integer('sender_id')->unsigned();
+            $table->foreign('sender_id')->references('id')->on('users');
+            $table->integer('recipient_id')->unsigned();
+            $table->foreign('recipient_id')->references('id')->on('users');
+            $table->integer('message_id')->unsigned();
+            $table->foreign('message_id')->references('id')->on('messages');
+            $table->boolean('read')->default(false);
 
         });
     }
