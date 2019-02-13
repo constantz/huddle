@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
             'password' => '123456',
             'created_at' => now(),
             'updated_at' => now(),
-            'isAdmin' => 0,
+            'isAdmin' => null,
             ],
 
             ['name' => 'Simone',
@@ -70,7 +70,7 @@ class UsersTableSeeder extends Seeder
             'password' => '123456',
             'created_at' => now(),
             'updated_at' => now(),
-            'isAdmin' => 0,
+            'isAdmin' => null,
             ],
             
         ]);

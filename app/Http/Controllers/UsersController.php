@@ -14,9 +14,9 @@ class UsersController extends Controller
      */
     public function progressIndex()
     {
-        // $users = \App\User::all();
+        // $students = \App\User::all();
 
-        $students = User::where('isAdmin', 0)->get();
+        $students = User::where('isAdmin', null)->get();
                 
         return view('users.progressindex', compact('students'));
     }
