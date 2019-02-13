@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\User;
 
 class UsersController extends Controller
 {
@@ -11,9 +12,13 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function progressIndex()
     {
-        //
+        // $users = \App\User::all();
+
+        $students = User::where('isAdmin', 0)->get();
+                
+        return view('users.progressindex', compact('students'));
     }
 
     /**
