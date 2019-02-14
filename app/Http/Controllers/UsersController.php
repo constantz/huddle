@@ -24,9 +24,10 @@ class UsersController extends Controller
     {
         // $students = \App\User::all();
 
-        $students = User::where('isAdmin', 1)->get();
+        $students = User::where('isAdmin', null)->get();
                 
-        return view('users.progressindex', compact('students'));
+        return view('users.studentsindex', compact('students'));
+        // "studentsindex" omdat het een lijst van studenten oplevert
     }
 
     /**
