@@ -23,7 +23,9 @@ Route::resource('/users', 'UsersController');
 
 // dit maakt Route::resource impliciet al aan:
 // Route::get('/users', 'UsersController@index'); (werkt dus ook met /users)
-Route::get('/progress', 'UsersController@progressIndex');
+Route::get('/student', 'UsersController@studentIndex');
+Route::get('/admin', 'UsersController@adminIndex');
+
 
 Auth::routes();
 

@@ -13,11 +13,11 @@
                     <div class="panel-heading">Dashboard</div>
                         <?php if(auth()->user()->isAdmin == 1): ?>
                             <div class=”panel-body”>
-                                <a href="{{url(‘admin/routes’)}}">Teacher</a>
+                                <a href="{{url('/admin')}}">Teacher</a>
                             </div>
                         <?php else: ?>
                         <div class=”panel-body”>
-                            <a href="{{url('/progress')}}">Student</a>
+                            <a href="{{url('/student')}}">Student</a>
                         </div>
                         <?php endif; ?>
                     </div>

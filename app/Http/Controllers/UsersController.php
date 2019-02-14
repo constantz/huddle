@@ -12,11 +12,19 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function progressIndex()
+    public function studentIndex()
     {
         // $students = \App\User::all();
 
         $students = User::where('isAdmin', null)->get();
+                
+        return view('users.students', compact('students'));
+    }
+    public function adminIndex()
+    {
+        // $students = \App\User::all();
+
+        $students = User::where('isAdmin', 1)->get();
                 
         return view('users.progressindex', compact('students'));
     }
