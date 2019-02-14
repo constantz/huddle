@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/students', 'PagesController@students');
 
 
 Route::resource('/users', 'UsersController');
@@ -25,6 +24,7 @@ Route::resource('/users', 'UsersController');
 // Route::get('/users', 'UsersController@index'); (werkt dus ook met /users)
 Route::get('/student', 'UsersController@studentIndex');
 Route::get('/admin', 'UsersController@adminIndex');
+Route::resource('/userSubject', 'UsersSubjectController');
 
 
 Auth::routes();
@@ -32,5 +32,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
+
 
 
