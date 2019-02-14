@@ -1,5 +1,6 @@
 <?php
 
+//niet gebruiken maar UsersSubjectController.php
 namespace App\Http\Controllers;
 
 use App\Users_subject;
@@ -15,14 +16,11 @@ class UsersSubjectController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD:app/Http/Controllers/Users_SubjectController.php
         //
-=======
         $usersSubjects = Users_subject::all();
         
         return view('/users/students', compact('usersSubjects'));
         
->>>>>>> 330a018f143da1327ce100c8ab00ef720e2a6ad0:app/Http/Controllers/UsersSubjectController.php
     }
 
     /**
