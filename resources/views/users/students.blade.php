@@ -1,7 +1,12 @@
 
 @extends('layouts.app')
 
+
+
 @section('content')
+<div class="title m-b-md">  
+Dit is de pagina van {{Auth::user()->name}}
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -12,8 +17,11 @@
 <tbody>
 @foreach($usersSubjects as $usersSubject)
 <tr>
-<td>{{$usersSubject->user_id}}</td>
-<td>{{$usersSubject->passed}}</td>
+<td>{{$usersSubject->subject->name}}</td>
+<td><label class="checkbox" $for="passed">
+        <input type="checkbox" name="passed" disabled {{$usersSubject->passed ? 'checked' : ''}}>
+    </label>
+</td>
 </tr>
 @endforeach
 </tbody>
