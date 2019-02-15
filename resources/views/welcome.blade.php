@@ -127,11 +127,11 @@
             
                    
                   
-                <div class="flex-center position-ref full-height">
-                <nav class="navbar fixed-top navbar-dark bg-warning"> 
-                    @if (Route::has('login'))
-                         <div class="top-right links">
-                            @auth
+        <div class="flex-center position-ref full-height">
+            <nav class="navbar fixed-top navbar-dark bg-warning"> 
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
                             <a class="navbar-brand" href="{{ url('/home') }}">Home</a>
                             @else
                             <a class="navbar-brand" href="{{ route('login') }}">Login</a>
@@ -139,12 +139,12 @@
                             @if (Route::has('register'))
                             <a class="navbar-brand" href="{{ route('register') }}">Register</a>
                             @endif
-                     @endauth
-                
+                        @endauth
+                    </div>
                 @endif
             
-                </nav>
-                </div>
+            </nav>
+        </div>
            
             <img class="pic" src="/img/pexels-photo-1068523.jpeg" >   
         
