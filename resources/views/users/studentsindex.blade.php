@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @extends('layout')
 
-
 @section('content')
     <h1 class="title">Students</h1>
+
     <table>
             <tr>
                 <th>Naam</th>
@@ -12,26 +12,34 @@
                 <th>JavaScript</th>
                 <th>PHP</th>
             </tr>
-        @foreach($students as $student)
+        @foreach($usersSubjects as $usersSubject)
             <tr>
                 <td>
-                <a href="/progress/{{ $student->id }}">{{ $student->name }}</a>
-                </td>
-            <form action="">
-                <td>
-                    <input type="checkbox" name="html">
+                    {{$usersSubject->user->name}}
                 </td>
                 <td>
-                    <input type="checkbox" name="css">
+                    {{$usersSubject->subject->name}}
+                    <label class="checkbox" $for="passed"> 
+                        <input type="checkbox" name="passed" {{$usersSubject->passed ? 'checked' : ''}}>
+
+                    </label>
                 </td>
                 <td>
-                    <input type="checkbox" name="javascript">
+                    
+                    
                 </td>
-                <td>
-                    <input type="checkbox" name="php">
-                </td>
-            </form>
             </tr>
         @endforeach
-    </table>
+    </table> 
+
+    
+
+
+
+
+
+
+
+
+
 @endsection

@@ -20,7 +20,14 @@ class UsersSubjectController extends Controller
         return view('/users/students', compact('usersSubjects'));
         
     }
-    
+    public function indexteacher()
+    {
+        $usersSubjects = Users_subject::all();
+        
+        return view('/users/studentsindex', compact('usersSubjects'));
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -73,7 +80,7 @@ class UsersSubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
