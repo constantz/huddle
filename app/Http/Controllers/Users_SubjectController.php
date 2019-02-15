@@ -1,11 +1,13 @@
 <?php
 
+//niet gebruiken maar UsersSubjectController.php
 namespace App\Http\Controllers;
 
-use App\Usersubject;
+use App\Users_subject;
+use App\User;
 use Illuminate\Http\Request;
 
-class usersSubjectController extends Controller
+class UsersSubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +17,10 @@ class usersSubjectController extends Controller
     public function index()
     {
         //
+        $usersSubjects = Users_subject::all();
+        
+        return view('/users/students', compact('usersSubjects'));
+        
     }
 
     /**
@@ -24,7 +30,13 @@ class usersSubjectController extends Controller
      */
     public function create()
     {
-        //
+        $us = new Users_subject();
+        $us->user_id = Auth::user()->id;
+        $us->subject_id = Auth::subject()->id;
+        $us->passed = 1;
+
+        $us->save();
+
     }
 
     /**
@@ -41,21 +53,21 @@ class usersSubjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Usersubject  $usersubject
+     * @param  \App\Users_subject  $usersubject
      * @return \Illuminate\Http\Response
      */
-    public function show(Usersubject $usersubject)
+    public function show(Users_subject $usersubject)
     {
-        //
+        $us = Users_subject::where('id', "*")->get();
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Usersubject  $usersubject
+     * @param  \App\Users_subject  $usersubject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usersubject $usersubject)
+    public function edit(Users_subject $usersubject)
     {
         //
     }
@@ -64,21 +76,21 @@ class usersSubjectController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Usersubject  $usersubject
+     * @param  \App\Users_subject  $usersubject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usersubject $usersubject)
+    public function update(Request $request, Users_subject $usersubject)
     {
-        //
+        
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Usersubject  $usersubject
+     * @param  \App\Users_subject  $usersubject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usersubject $usersubject)
+    public function destroy(Users_subject $usersubject)
     {
         //
     }

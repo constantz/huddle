@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Users_subject;
+use App\User;
 use Illuminate\Http\Request;
 
 class UsersSubjectController extends Controller
@@ -15,7 +16,9 @@ class UsersSubjectController extends Controller
     public function index()
     {
         $usersSubjects = Users_subject::all();
+        
         return view('/users/students', compact('usersSubjects'));
+        
     }
 
     /**
