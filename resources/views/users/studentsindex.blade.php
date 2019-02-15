@@ -1,8 +1,9 @@
 @extends('layouts.app')
+@extends('layout')
+
 
 @section('content')
     <h1 class="title">Students</h1>
-
     <table>
             <tr>
                 <th>Naam</th>
@@ -14,7 +15,7 @@
         @foreach($students as $student)
             <tr>
                 <td>
-                    <a href="/progress/{{ $student->id }}">{{ $student->name }}</a>
+                <a href="/progress/{{ $student->id }}">{{ $student->name }}</a>
                 </td>
             <form action="">
                 <td>

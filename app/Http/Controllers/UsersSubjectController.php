@@ -20,7 +20,7 @@ class UsersSubjectController extends Controller
         return view('/users/students', compact('usersSubjects'));
         
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
