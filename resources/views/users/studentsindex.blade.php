@@ -18,16 +18,18 @@
                     {{$usersSubject->user->name}}
                 </td>
                 <td>
-                    {{$usersSubject->subject->name}}
-                    <label class="checkbox" $for="passed"> 
-                        <input type="checkbox" name="passed" {{$usersSubject->passed ? 'checked' : ''}}>
+                    {{$usersSubject->subject->name}}</td>
+                    <td>
+                        <form  method="POST" action="/userSubject/{{$usersSubject->id}}" >
+                                @method('PATCH')
+                                @csrf
 
-                    </label>
-                </td>
-                <td>
-                    
-                    
-                </td>
+                                <label class="checkbox" $for="passed">  
+                                    <input type="checkbox" name="passed" {{$usersSubject->passed ? 'checked' : ''}}>      
+                                </label> 
+                                <button type="submit">edit</button>
+                        </form>
+                    </td>
             </tr>
         @endforeach
     </table> 

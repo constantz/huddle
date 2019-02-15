@@ -27,6 +27,7 @@ Route::get('/student', 'UsersController@studentIndex');
 Route::resource('/userSubject', 'UsersSubjectController');
 Route::get('/admin', 'UsersSubjectController@indexteacher');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

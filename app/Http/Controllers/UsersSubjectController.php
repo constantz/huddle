@@ -68,7 +68,7 @@ class UsersSubjectController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
@@ -78,16 +78,21 @@ class UsersSubjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, users_subject $usersSubject)
     {
-        
+        return $usersSubject;
+        $usersSubject->update([
+            'passed' => request()->has('passed')
+        ]);
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responsename="submit"
      */
     public function destroy($id)
     {
