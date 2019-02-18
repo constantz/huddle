@@ -19,7 +19,15 @@ class UsersSubjectController extends Controller
         
         return view('/users/students', compact('usersSubjects')); 
     }
-    
+
+    public function indexteacher()
+    {
+        $usersSubjects = Users_subject::all();
+        
+        return view('/users/studentsindex', compact('usersSubjects'));
+        
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -61,7 +69,7 @@ class UsersSubjectController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
@@ -71,16 +79,21 @@ class UsersSubjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, users_subject $usersSubject)
     {
-        //
+        return $usersSubject;
+        $usersSubject->update([
+            'passed' => request()->has('passed')
+        ]);
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responsename="submit"
      */
     public function destroy($id)
     {
