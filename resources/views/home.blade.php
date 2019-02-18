@@ -18,7 +18,7 @@
                             </div>
                         <?php else: ?>
                         <div class=”panel-body”>
-                            <a href="{{url('/userSubject')}}">Student</a>
+                            <a href="{{url('/usersSubject')}}">Student</a>
                         </div>
                         <?php endif; ?>
                     </div>

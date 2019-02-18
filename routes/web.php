@@ -24,7 +24,7 @@ Route::resource('/users', 'UsersController');
 // Route::get('/users', 'UsersController@index'); (werkt dus ook met /users)
 Route::get('/student', 'UsersController@studentIndex');
 //Route::get('/admin', 'UsersController@adminIndex');
-Route::resource('/userSubject', 'UsersSubjectController');
+Route::resource('/usersSubject', 'UsersSubjectController');
 Route::get('/admin', 'UsersSubjectController@indexteacher');
 
 

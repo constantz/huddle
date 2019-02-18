@@ -81,7 +81,7 @@ class UsersSubjectController extends Controller
      */
     public function update(Request $request, users_subject $usersSubject)
     {
-        return $usersSubject;
+        
         $usersSubject->update([
             'passed' => request()->has('passed')
         ]);

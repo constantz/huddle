@@ -20,7 +20,8 @@
                 <td>
                     {{$usersSubject->subject->name}}</td>
                     <td>
-                        <form  method="POST" action="/userSubject/{{$usersSubject->id}}" >
+                        <form  
+                        method="POST" action="/usersSubject/{{$usersSubject->id}}" >
                                 @method('PATCH')
                                 @csrf
 
@@ -35,4 +36,3 @@
 
     </table>
 @endsection
-  
