@@ -26,10 +26,10 @@
             <div class="col-md-4">
               <ul class="list-inline quicklinks">
                 <li class="list-inline-item">
-                  <a href="#">...</a>
+                  <a href="#"></a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">...</a>
+                  <a href="#"></a>
                 </li>
               </ul>
             </div>
