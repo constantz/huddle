@@ -4,6 +4,7 @@
 @section('content')
     <h1 class="title">Students</h1>
 
+    
     <table>
             <tr>
                 <th>Naam</th>
@@ -26,9 +27,8 @@
                                 @csrf
 
                                 <label class="checkbox" $for="passed">  
-                                    <input type="checkbox" name="passed" {{$usersSubject->passed ? 'checked' : ''}}>      
+                                    <input type="checkbox" name="passed" onChange="this.form.submit()" {{$usersSubject->passed ? 'checked' : ''}}>      
                                 </label> 
-                                <button type="submit">edit</button>
                         </form>
                     </td>
             </tr>
