@@ -21,11 +21,12 @@ class UsersSubjectController extends Controller
     }
 
     public function indexteacher()
-    {
+    {  
         $usersSubjects = Users_subject::all();
-        
-        return view('/users/studentsindex', compact('usersSubjects'));
-        
+
+        $user = User::all();
+
+        return view('/users/studentsindex', compact('usersSubjects', 'user'));
     }
 
 
@@ -81,7 +82,6 @@ class UsersSubjectController extends Controller
      */
     public function update(Request $request, users_subject $usersSubject)
     {
-        
         $usersSubject->update([
             'passed' => request()->has('passed')
         ]);
