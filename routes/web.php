@@ -34,5 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 
+Route::get('timetable', 'TimetableController@index');
+
 
 
