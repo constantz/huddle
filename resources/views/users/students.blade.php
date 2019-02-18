@@ -28,6 +28,10 @@ Dit is de pagina van {{Auth::user()->name}}
 </tbody>
 </table> 
 
+
+
+
+
 @endsection
 
 

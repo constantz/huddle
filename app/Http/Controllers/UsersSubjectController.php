@@ -17,10 +17,10 @@ class UsersSubjectController extends Controller
     {
         $usersSubjects = Users_subject::all();
         
-        return view('/users/students', compact('usersSubjects'));
-        
+        return view('/users/students', compact('usersSubjects')); 
     }
     
+
     /**
      * Show the form for creating a new resource.
      *
