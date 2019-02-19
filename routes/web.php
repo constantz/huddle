@@ -16,8 +16,7 @@ Route::get('/', function () {
 });
 
 
-
-
+Route::get('/users/edumat', 'EdumatsController@edumat');
 Route::resource('/users', 'UsersController');
 
 // dit maakt Route::resource impliciet al aan:
