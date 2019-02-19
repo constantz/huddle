@@ -5,19 +5,13 @@
 <?php use \App\Users_subject; ?>
     <h1 class="title">Students</h1>
 
-    
-    
-
-    
 <table>
             <tr>
                 <th>Naam</th>
-                <th>vakken</th>
-                
+                <th>vakken</th>   
             </tr>
-            {{-- voor elke user alle vakken weergeven die bij hem horen --}}
+          
          @foreach($user as $user)
-         
             <tr>
                 <td>
                         @if ($user->isAdmin != 1)
@@ -37,13 +31,13 @@
                                     <input type="checkbox" name="passed" onChange="this.form.submit()" {{$usersSubject->passed ? 'checked' : ''}}>      
                                 </label> 
                         </form> 
-                </td>
+                </td>   
                         @endforeach
                     @endif
-                   
+                <td><a href="/usersSubject/{{$user->id}}/edit">Vak toevoegen</a></td>
             </tr>
         @endforeach
-
+</table>
 
 
 @endsection

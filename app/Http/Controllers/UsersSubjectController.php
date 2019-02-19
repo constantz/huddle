@@ -37,7 +37,7 @@ class UsersSubjectController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -48,7 +48,15 @@ class UsersSubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        
+        Users_subject::create([
+            'user_id' => request('user_id'),
+            'subject_id' => request('subject_id'),
+            'passed'=> 0
+            ]);
+           
+            return redirect()->action('UsersSubjectController@indexteacher');
     }
 
     /**
@@ -70,7 +78,7 @@ class UsersSubjectController extends Controller
      */
     public function edit($id)
     {
-       
+        return view('/users/usersSubjectCreate', compact('usersSubject'));
     }
 
     /**
