@@ -26,6 +26,7 @@ Route::get('/student', 'UsersController@studentIndex');
 //Route::get('/admin', 'UsersController@adminIndex');
 Route::resource('/usersSubject', 'UsersSubjectController');
 Route::get('/admin', 'UsersSubjectController@indexteacher');
+Route::get('/usdelete', 'UsersSubjectController@indexdelete');
 
 
 Auth::routes();

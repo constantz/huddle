@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Users_subject;
 use App\User;
 use Illuminate\Http\Request;
+use Session;
 
 class UsersSubjectController extends Controller
 {
@@ -29,6 +30,19 @@ class UsersSubjectController extends Controller
         return view('/users/studentsindex', compact('usersSubjects', 'user'));
     }
 
+    public function indexdelete()
+    {  
+        
+        // $usersSubjects = Users_subject::all();
+
+        // $user = User::all();
+
+        return view('/users/userSubjectDelete', compact('usersSubjects'));
+    }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -37,6 +51,7 @@ class UsersSubjectController extends Controller
      */
     public function create()
     {
+       
         
     }
 
@@ -46,9 +61,8 @@ class UsersSubjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        
+    public function store(Request $request) 
+     {
         
         Users_subject::create([
             'user_id' => request('user_id'),
@@ -78,7 +92,9 @@ class UsersSubjectController extends Controller
      */
     public function edit($id)
     {
-        return view('/users/usersSubjectCreate', compact('usersSubject'));
+        
+        return view('/users/usersSubjectCreate', compact( 'id'));
+        
     }
 
     /**

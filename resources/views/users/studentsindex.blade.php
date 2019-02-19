@@ -33,8 +33,10 @@
                         </form> 
                 </td>   
                         @endforeach
+                    <td><a href="/usersSubject/{{$user->id}}/edit">Vak toevoegen</a></td>  
+                    <td><a href="{{url('/usdelete')}}">Vak verwijderen</a></td> 
                     @endif
-                <td><a href="/usersSubject/{{$user->id}}/edit">Vak toevoegen</a></td>
+                
             </tr>
         @endforeach
 </table>
