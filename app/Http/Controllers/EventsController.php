@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Calendar;
+use App\Event;
 
-use App\Timetable;
-
-class TimetableController extends Controller
+class EventsController extends Controller
 {
 	public function index()
-    {
-		$timetables = [];
-		$data = Timetable::all();
-		if($data->count()){
+	{
+			$events = [];
+			$data = Event::all();
+			if($data->count()){
 			foreach ($data as $key => $value) {
-				$timetables[] = Calendar::timetable(
+				$events[] = Calendar::event(
 					$value->title,
 					true,
 					new \DateTime($value->start_time),
@@ -24,7 +22,7 @@ class TimetableController extends Controller
 				);
 			}
 		}
-	$calendar = Calendar::addTimetables($timetables); 
-	return view('viewtimetable', compact('calendar'));
+		$calendar = Calendar::addEvents($events); 
+		return view('mycalender', compact('calendar'));
     }
 }
