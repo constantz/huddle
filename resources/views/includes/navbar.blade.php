@@ -14,7 +14,7 @@
                 <a class="nav-link" href="#">lesmateriaal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="events">rooster</a>
+                <a class="nav-link" href="#">rooster</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">mededelingen</a>

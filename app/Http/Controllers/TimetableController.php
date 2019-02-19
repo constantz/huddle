@@ -10,21 +10,10 @@ use App\Timetable;
 
 class TimetableController extends Controller
 {
-	public function index()
+	 public function index()
     {
-		$timetables = [];
-		$data = Timetable::all();
-		if($data->count()){
-			foreach ($data as $key => $value) {
-				$timetables[] = Calendar::timetable(
-					$value->title,
-					true,
-					new \DateTime($value->start_time),
-					new \DateTime($value->end_time.' +1 day')
-				);
-			}
-		}
-	$calendar = Calendar::addTimetables($timetables); 
-	return view('viewtimetable', compact('calendar'));
+    	$timetable = Timetable::get();
+
+    	return view('timetable', ['timetables' => $timetable]);
     }
 }
