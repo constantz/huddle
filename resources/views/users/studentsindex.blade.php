@@ -31,9 +31,17 @@
                                 </label> 
                         </form> 
                 </td>   
+                <td>
+                        </form>
+                        <form method="POST" action="/usersSubject/{{$usersSubject->id}}">
+                            @method('DELETE')
+                            @csrf
+                        <button type="submit"><i class="far fa-trash-alt"></i></button> 
+                        </form>
+                        </td>
                         @endforeach
                     <td><a href="/usersSubject/{{$user->id}}/edit">Vak toevoegen</a></td>  
-                    <td><a href="{{url('/usdelete')}}">Vak verwijderen</a></td> 
+                    {{-- <td><a href="{{url('/usdelete')}}">Vak verwijderen</a></td>  --}}
                     @endif
                 
             </tr>

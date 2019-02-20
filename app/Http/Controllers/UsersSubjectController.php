@@ -119,8 +119,10 @@ class UsersSubjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Responsename="submit"
      */
-    public function destroy($id)
+    public function destroy(users_subject $usersSubject)
     {
-        //
+        $usersSubject->delete();
+        
+        return back();
     }
 }
