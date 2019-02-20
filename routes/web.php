@@ -36,6 +36,7 @@ Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 
 // Route::get('events', 'EventsController@index');
 Route::get('/timetable', 'TimetableController@index');
+Route::get('/timetableindex', 'TimetableindexController@index')->middleware('admin');
 
 
 
