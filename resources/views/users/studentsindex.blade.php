@@ -14,7 +14,7 @@
             <tr>
                 <td>
                         @if ($user->isAdmin != 1)
-                    {{$user->name}}
+                    {{$user->name}} {{$user->preposition}} {{$user->lastname}}
                        
                 </td>
                 

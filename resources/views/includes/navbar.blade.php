@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/') }}">Huddle <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">lesmateriaal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">rooster</a>
+                <a class="nav-link" a href="timetable">rooster</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">mededelingen</a>
