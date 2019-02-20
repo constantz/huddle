@@ -41,6 +41,6 @@ class User extends Authenticatable
     public function users_subject()
     {
        return $this->hasMany(Users_subject::class);
-   }
+	}
 
 }

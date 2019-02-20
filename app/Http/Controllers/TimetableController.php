@@ -7,13 +7,16 @@ use Illuminate\Http\Request;
 use Calendar;
 
 use App\Timetable;
+use App\Subject;
 
 class TimetableController extends Controller
 {
 	 public function index()
     {
-    	$timetable = Timetable::get();
-
-    	return view('timetable', ['timetables' => $timetable]);
+		$timetable = Timetable::get();
+		
+		$subject = Subject::all();
+		
+		return view('timetable', ['timetable' => $timetable, 'subject' => $subject]);
     }
 }
