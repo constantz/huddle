@@ -10,7 +10,6 @@
                 <th>Naam</th>
                 <th>vakken</th>   
             </tr>
-          
          @foreach($user as $user)
             <tr>
                 <td>
@@ -40,6 +39,7 @@
             </tr>
         @endforeach
 </table>
-
+<br>
+<a href="timetableindex"><button>Geplande lessen</button></a>
 
 @endsection

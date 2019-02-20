@@ -12,5 +12,5 @@
 	
 @endforeach
 
-
+Hier komt een edit knop
 @endsection

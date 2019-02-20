@@ -28,6 +28,8 @@ Dit is de pagina van {{Auth::user()->name}}
 </tbody>
 </table> 
 
+<a href="timetable"><button>Geplande lessen</button></a>
+
 
 
 
