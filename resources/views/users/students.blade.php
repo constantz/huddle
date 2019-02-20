@@ -5,6 +5,7 @@
 
 
 @section('content')
+<?php use \App\Users_subject; ?>
 <div class="title m-b-md">  
 Dit is de pagina van {{Auth::user()->name}}
 </div>
@@ -16,7 +17,8 @@ Dit is de pagina van {{Auth::user()->name}}
         </tr>
 </thead>
 <tbody>
-@foreach($usersSubjects as $usersSubject)
+
+ @foreach (Users_subject::where('user_id',Auth::user()->id)->get() as $usersSubject)
 <tr>
 <td>{{$usersSubject->subject->name}}</td>
 <td><label class="checkbox" $for="passed">

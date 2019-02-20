@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Users_subject;
 use App\User;
+use App\Subject;
 use Illuminate\Http\Request;
 use Session;
 
@@ -90,10 +91,10 @@ class UsersSubjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Subject $subject)
     {
-        
-        return view('/users/usersSubjectCreate', compact( 'id'));
+        $subjects = Subject::all();
+        return view('/users/usersSubjectCreate', compact( 'id', 'subjects'));
         
     }
 
