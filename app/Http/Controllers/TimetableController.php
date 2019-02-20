@@ -18,5 +18,50 @@ class TimetableController extends Controller
 		$subject = Subject::all();
 		
 		return view('timetable', ['timetable' => $timetable, 'subject' => $subject]);
-    }
+		}
+		
+		public function create()
+		{
+			return view('createtimetable');
+		}
+
+		public function store()
+		{
+
+			Timetable::create([
+			    'date' => request('date'),
+			    'start_time' => request('start_time'),
+					'end_time' => request('end_time'),
+					'subject_id' => request('subject_id'),
+					'group_id' => 1
+			]);
+
+			return redirect('/timetable');
+			
+		}
+
+		public function edit(Timetable $timetable)
+		{
+			return view('edittimetable', compact('timetable'));
+		}
+
+		public function update(Timetable $timetable)
+		{
+				$timetable->date = request('date');
+				$timetable->start_time = requist('start_time');
+				$timetable->end_time = request('end_time');
+				$timetable->subject_id = request('subject_id');
+				$timetable->group_id = 1;
+			
+			return redirect('/timetable');
+		}
+
+		public function destroy(Timetable $timetable) {
+
+			$timetable->delete();
+
+			return redirect('/timetable');
+
+	}
+
 }

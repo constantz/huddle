@@ -38,5 +38,10 @@ Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 Route::get('/timetable', 'TimetableController@index');
 Route::get('/timetableindex', 'TimetableindexController@index')->middleware('admin');
 
+Route::get('/timetable/create', 'TimetableController@create');
+Route::post('/timetable', 'TimetableController@store');
 
+// Route::get('/timetable/update', 'TimetableController@edit');
+Route::get('/timetable/{timetable}/edit', 'TimetableController@edit');
+Route::get('/timetable/{timetable}/delete', 'TimetableController@destroy');
 
