@@ -1,4 +1,5 @@
-@section('content')
+{{-- @section('content') --}}
+
 <br>
 <h3>Geplande lessen</h3>
 <br>
@@ -10,4 +11,4 @@
 @endforeach
 
 
-@endsection
+{{-- @endsection --}}
