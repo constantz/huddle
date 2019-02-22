@@ -29,15 +29,16 @@
     <div>
         Vak:<br>
         <select name="subject_id" value="{{ $timetable->subject_id }}">
-            <option value=1>HTML</option>
-            <option value=2>CSS</option>
-            <option value=3>JavaScript</option>
-            <option value=4>PHP</option>
+            <option value={{ $timetable->subject_id }}>{{ $timetable->subject->name }}</option>
+            @foreach($subjects as $subj)
+                @if ($subj->id !== $timetable->subject_id)
+                    <option value={{ $subj->id }}>{{ $subj->name }}</option>
+                @endif    
+            @endforeach
         </select>
-        
     </div>
-        <br>
-        <input type="SUBMIT" value="Submit">
+    <br>
+    <input type="SUBMIT" value="Submit">
 </form>
 
 @endsection

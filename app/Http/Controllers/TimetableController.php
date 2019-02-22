@@ -22,7 +22,8 @@ class TimetableController extends Controller
 		
 		public function create()
 		{
-			return view('createtimetable');
+			$subjects = Subject::all();
+			return view('createtimetable', ['subjects' => $subjects]);
 		}
 
 		public function store()
@@ -42,7 +43,8 @@ class TimetableController extends Controller
 
 		public function edit(Timetable $timetable)
 		{
-			return view('edittimetable', compact('timetable'));
+			$subjects = Subject::all();
+			return view('edittimetable', ['timetable' => $timetable, 'subjects' => $subjects]);
 		}
 
 		public function update(Timetable $timetable)

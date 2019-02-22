@@ -28,12 +28,10 @@
     <div>
         Vak:<br>
         <select name="subject_id">
-            <option value=1>HTML</option>
-            <option value=2>CSS</option>
-            <option value=3>JavaScript</option>
-            <option value=4>PHP</option>
+            @foreach($subjects as $subj)
+                <option value={{ $subj->id }}>{{ $subj->name }}</option>
+            @endforeach
         </select>
-        
     </div>
         <br>
         <input type="SUBMIT" value="Submit">
