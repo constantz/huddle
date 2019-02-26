@@ -16,7 +16,7 @@
 	@if (Auth::user()->isAdmin == 1)
 		
 		<a href="/timetable/{{ $time->id }}/edit"><small><button>Wijzig</button></small></a>
-		<a href="/timetable/{{ $time->id }}/delete"><small><button>Verwijder</button></small></a>
+		<a href="/timetable/{{ $time->id }}/delete"><small><button><div class="far fa-trash-alt"></div></button></small></a>
 	@endif
 	</p>
 <br><br>	

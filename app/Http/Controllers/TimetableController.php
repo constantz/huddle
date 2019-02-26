@@ -13,7 +13,8 @@ class TimetableController extends Controller
 {
 	 public function index()
     {
-		$timetable = Timetable::get();
+		// $timetable = Timetable::get();
+		$timetable = Timetable::orderBy('date')->get();
 		
 		$subject = Subject::all();
 		
