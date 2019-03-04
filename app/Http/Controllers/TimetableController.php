@@ -13,7 +13,6 @@ class TimetableController extends Controller
 {
 	 public function index()
     {
-		// $timetable = Timetable::get();
 		$timetable = Timetable::orderBy('date')->get();
 		
 		$subject = Subject::all();
@@ -51,10 +50,11 @@ class TimetableController extends Controller
 		public function update(Timetable $timetable)
 		{
 				$timetable->date = request('date');
-				$timetable->start_time = requist('start_time');
+				$timetable->start_time = request('start_time');
 				$timetable->end_time = request('end_time');
 				$timetable->subject_id = request('subject_id');
 				$timetable->group_id = 1;
+				$timetable->save();
 			
 			return redirect('/timetable');
 		}
