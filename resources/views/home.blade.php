@@ -17,7 +17,7 @@
                                 <a href="{{url('/admin')}}">Teacher</a>
                             </div>
                             <div class=”panel-body”>
-                                <a href="{{url('/subject')}}">Vakken</a>
+                                <a href="{{url('/subjects')}}">Vakken</a>
                             </div>
                         <?php else: ?>
                         <div class=”panel-body”>
