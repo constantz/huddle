@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/subjects', 'SubjectController');
 
 Route::get('/users/edumat', 'EdumatsController@edumat');
 Route::resource('/users', 'UsersController');

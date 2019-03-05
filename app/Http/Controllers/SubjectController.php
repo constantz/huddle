@@ -13,7 +13,10 @@ class SubjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        $subjects = \App\Subject::all();
+
+        return view('subjects', [ 'subjects' => $subjects]);
         
     }
 
@@ -24,7 +27,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+     	return view('createsubject');
     }
 
     /**
@@ -35,7 +38,11 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Subject::create([
+            'name' => request('name')
+        ]);
+
+        return redirect('/subjects');
     }
 
     /**
@@ -57,7 +64,9 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        //
+        // $subjects = Subject::all();
+            $subjects = $subject;
+			return view('editsubject', ['subjects' => $subjects]);
     }
 
     /**
@@ -69,7 +78,10 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
-        //
+        $subject->name = request('name');
+        $subject->save();
+
+        return redirect('/subjects');
     }
 
     /**
@@ -80,6 +92,7 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+        $subject->delete();
+        return redirect('/subjects');
     }
 }
