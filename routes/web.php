@@ -44,5 +44,6 @@ Route::post('/timetable', 'TimetableController@store');
 
 // Route::get('/timetable/update', 'TimetableController@edit');
 Route::get('/timetable/{timetable}/edit', 'TimetableController@edit');
+Route::patch('timetable/{timetable}', 'TimetableController@update');
 Route::get('/timetable/{timetable}/delete', 'TimetableController@destroy');
 
