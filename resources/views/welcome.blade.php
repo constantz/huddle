@@ -104,10 +104,6 @@
                 font-family: 'Nothing You Could Do', cursive;
                 font-weight: 200;
                 font-size:4vw;
-               
-                
-
-
           }
           
           .call-to-action {

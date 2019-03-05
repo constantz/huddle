@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Edumat extends Model
 {
-    //
-}
+    protected $guarded = [
+    
+     ];
+    }
