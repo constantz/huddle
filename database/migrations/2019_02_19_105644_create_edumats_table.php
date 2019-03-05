@@ -15,8 +15,12 @@ class CreateEdumatsTable extends Migration
     {
         Schema::create('edumats', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('description');
             $table->timestamps();
+            $table->integer('subject_id')->unsigned();
+            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->longtext('content');
+            $table->text('datalinks');
+
         });
     }
 

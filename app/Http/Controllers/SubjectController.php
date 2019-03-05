@@ -27,7 +27,9 @@ class SubjectController extends Controller
      */
     public function create()
     {
+
      	return view('createsubject');
+
     }
 
     /**
@@ -38,11 +40,15 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
+
         Subject::create([
             'name' => request('name')
         ]);
 
         return redirect('/subjects');
+
+    
+
     }
 
     /**
