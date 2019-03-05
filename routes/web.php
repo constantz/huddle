@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('/users/edumat', 'EdumatsController@edumat');
 Route::resource('/users', 'UsersController');
+Route::get('/users/edumatindex', 'EdumatsindexController@edumat');
 
 // dit maakt Route::resource impliciet al aan:
 // Route::get('/users', 'UsersController@index'); (werkt dus ook met /users)
@@ -36,7 +37,7 @@ Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 
 // Route::get('events', 'EventsController@index');
 Route::get('/timetable', 'TimetableController@index');
-Route::get('/timetableindex', 'TimetableindexController@index')->middleware('admin');
+// Route::get('/timetableindex', 'TimetableindexController@index')->middleware('admin');
 
 Route::get('/timetable/create', 'TimetableController@create');
 Route::post('/timetable', 'TimetableController@store');

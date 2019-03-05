@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Users_GroupsTableSeeder::class);
         $this->call(Users_SubjectsTableSeeder::class);
         $this->call(TimetableTableSeeder::class);
-        $this->call(Sent_MessagesTableSeeder::class);   
+        $this->call(Sent_MessagesTableSeeder::class); 
+        $this->call(EdumatsTableSeeder::class);
     }
 }
