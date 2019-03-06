@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request; 
 use \App\Edumat;
+use \App\Datalinks;
 
 class EdumatsController extends Controller
 {
@@ -37,7 +38,8 @@ class EdumatsController extends Controller
     
     public function show(Edumat $edumat)
     {
-        return view('/edumatShow', compact('edumat'));
+       
+        return view('/edumatShow', compact('edumat', 'datalinks'));
     }
 
     

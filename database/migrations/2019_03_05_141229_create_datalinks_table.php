@@ -18,7 +18,8 @@ class CreateDatalinksTable extends Migration
             $table->timestamps();
             $table->integer('edumat_id')->unsigned();
             $table->foreign('edumat_id')->references('id')->on('edumats');
-            $table->text('datalinks');
+            $table->text('datalinks')->nullable();
+            $table->text('url')->nullable();
 
         });
     }
