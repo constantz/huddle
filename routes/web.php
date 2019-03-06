@@ -39,9 +39,9 @@ Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 // Route::get('events', 'EventsController@index');
 Route::get('/timetable', 'TimetableController@index');
 // Route::get('/timetableindex', 'TimetableindexController@index')->middleware('admin');
-
-Route::get('/timetable/create', 'TimetableController@create');
-Route::post('/timetable', 'TimetableController@store');
-Route::get('/timetable/{timetable}/edit', 'TimetableController@edit');
-Route::patch('timetable/{timetable}', 'TimetableController@update');
-Route::delete('/timetable/{timetable}', 'TimetableController@destroy');
+Route::resource('timetable', 'TimetableController');
+// Route::get('/timetable/create', 'TimetableController@create');
+// Route::post('/timetable', 'TimetableController@store');
+// Route::get('/timetable/{timetable}/edit', 'TimetableController@edit');
+// Route::patch('timetable/{timetable}', 'TimetableController@update');
+// Route::delete('/timetable/{timetable}', 'TimetableController@destroy');
