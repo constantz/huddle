@@ -29,11 +29,13 @@
 <a href="/edumat/create">Lesmateriaal toevoegen</a>
 
 
+
+
  
 @endsection   
 
 
-{{-- echo asset('storage/javascript1.pptx');
 
-Storage::disk('local')->put('file.txt', 'Contents');
+
+{{--Storage::disk('local')->put('file.txt', 'Contents');
  --}}

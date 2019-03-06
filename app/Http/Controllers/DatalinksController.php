@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Datalinks;
+use App\Edumat;
 use Illuminate\Http\Request;
 
 class DatalinksController extends Controller
@@ -13,8 +14,11 @@ class DatalinksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    { 
+        $datalinks=Datalinks::all();
+     
+        
+        return view ('/edumatShow', compact('datalinks'));
     }
 
     /**
@@ -35,7 +39,13 @@ class DatalinksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Datalinks::create([
+            'edumat_id' => request('edumat_id'),
+            'url'=> request('url')
+        ]);
+
+        return back();
+
     }
 
     /**
@@ -78,8 +88,10 @@ class DatalinksController extends Controller
      * @param  \App\Datalinks  $datalinks
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Datalinks $datalinks)
+    public function destroy(Datalinks $datalink)
     {
-        //
+        $datalink->delete();
+
+        return back();
     }
 }

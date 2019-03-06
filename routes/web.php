@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/subjects', 'SubjectController');
-
+Route::resource('/datalinks', 'DatalinksController');
 Route::resource('edumat', 'EdumatsController');
 Route::resource('/users', 'UsersController');
 Route::get('/users/edumatindex', 'EdumatsindexController@edumat');
