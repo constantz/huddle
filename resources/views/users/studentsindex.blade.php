@@ -48,6 +48,8 @@
         @endforeach
 </table>
 <br>
-<a href="timetable"><button>Geplande lessen</button></a>
+
+
+
 
 @endsection

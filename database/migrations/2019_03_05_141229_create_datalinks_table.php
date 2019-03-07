@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEdumatsTable extends Migration
+class CreateDatalinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateEdumatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('edumats', function (Blueprint $table) {
+        Schema::create('datalinks', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('subject_id')->unsigned();
-            $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->text('name');
-            $table->longtext('content');
-            
+            $table->integer('edumat_id')->unsigned();
+            $table->foreign('edumat_id')->references('id')->on('edumats');
+            $table->text('datalinks')->nullable();
+            $table->text('url')->nullable();
+
         });
     }
 
@@ -31,6 +31,6 @@ class CreateEdumatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('edumats');
+        Schema::dropIfExists('datalinks');
     }
 }

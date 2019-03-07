@@ -12,45 +12,61 @@ class EdumatsTableSeeder extends Seeder
     public function run()
     {
         DB::table('edumats')->insert(
-            [
+            [           
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'HTML Les 1',
+                'subject_id' => 1,
+                'name' => 'HTML Les 1',
+                'content'=> 'HTML is een programeer taal',
                 ],
 
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'HTML Les 2',
+                'subject_id' => 1,
+                'name' => 'HTML Les 2',
+                'content'=> 'Dit is HTML les 2',
                 ],
 
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'CSS Les 1',
+                'subject_id' => 2,
+                'name' => 'CSS Les 1',
+                'content'=> 'CSS is een programeer taal',
                 ],
 
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'CSS Les 2',
+                'subject_id' => 2,
+                'name' => 'CSS Les 2',
+                'content'=> 'Dit is CSS les 2',
                 ],
 
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'JavaScript Les 1',
+                'subject_id' => 3,
+                'name' => 'JavaScript Les 1',
+                'content'=> 'JavaScript is een programeer taal',
                 ],
 
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'JavaScript Les 2',
+                'subject_id' => 3,
+                'name' => 'JavaScript',
+                'content'=> 'Dit is JavaScript les 2',
                 ],
 
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'PHP Les 1',
+                'subject_id' => 4,
+                'name' => 'PHP Les 1',
+                'content'=> 'PHP is een programeer taal',
                 ],
 
                 ['created_at' => now(),
                 'updated_at' => now(),
-                'description' => 'PHP Les 2',
+                'subject_id' => 4,
+                'name' => 'PHP Les 2',
+                'content'=> 'Dit is PHP les 2',
                 ]
             ]);
     }

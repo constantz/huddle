@@ -11,7 +11,117 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Styles -->
+
         <link rel=" stylesheet" href="css/welcome.css">
+
+        <style>
+            html, body, footer {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100%;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100%;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height:10%;
+                background-color: #ffc107;
+                color: white;
+                text-align: center;
+                
+                padding: 25px 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+}
+
+            .pic{
+                position:absolute;
+                top:0%;
+                width:100%;
+                margin-bottom:0vw;
+                
+           }
+
+           .navbar{
+            z-index: 1;
+            width:100%;
+            height:10%;
+           }
+          
+          .quote{
+                position:absolute;
+                margin-top:20%;
+                
+                height:100%;
+                color:#ffc107;
+                font-family: 'Nothing You Could Do', cursive;
+                font-weight: 200;
+                font-size:4vw;
+          }
+          
+          .call-to-action {
+                position: relative;
+                background-color: #343a40;
+                margin-top:0%;
+                background-size: 50vw;
+                padding-top: 7rem;
+                padding-bottom: 7rem;
+                height: 100%;
+                width: 100%;
+}
+          
+        </style>
+>>>>>>> 6bd978acbbcb6c43d1b8f0258afc6be9437c934e
     </head>
     <body>
             
