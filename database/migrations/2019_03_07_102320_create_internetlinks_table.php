@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDatalinksTable extends Migration
+class CreateInternetlinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateDatalinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('datalinks', function (Blueprint $table) {
+        Schema::create('internetlinks', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->integer('edumat_id')->unsigned();
             $table->foreign('edumat_id')->references('id')->on('edumats');
-            $table->text('datalinks');
+            $table->text('url');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateDatalinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datalinks');
+        Schema::dropIfExists('internetlinks');
     }
 }

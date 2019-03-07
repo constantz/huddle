@@ -37,5 +37,4 @@
 
 
 
-{{--Storage::disk('local')->put('file.txt', 'Contents');
- --}}
+

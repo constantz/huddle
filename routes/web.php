@@ -19,6 +19,11 @@ Route::resource('/subjects', 'SubjectController');
 Route::resource('/datalinks', 'DatalinksController');
 Route::resource('edumat', 'EdumatsController');
 Route::resource('/users', 'UsersController');
+Route::resource('/internetlink', 'InternetlinkController');
+
+
+
+
 Route::get('/users/edumatindex', 'EdumatsindexController@edumat');
 
 // dit maakt Route::resource impliciet al aan:

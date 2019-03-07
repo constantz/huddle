@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request; 
 use \App\Edumat;
 use \App\Datalinks;
+use App\Internetlink;
 
 class EdumatsController extends Controller
 {
     public function index(){
 
         $edumats=Edumat::all();
-    
-        
+
     
         return view('/edumat', compact('edumats'));
         }
@@ -39,7 +39,7 @@ class EdumatsController extends Controller
     public function show(Edumat $edumat)
     {
        
-        return view('/edumatShow', compact('edumat', 'datalinks'));
+        return view('/edumatShow', compact('edumat', 'datalinks', 'internetlink'));
     }
 
     

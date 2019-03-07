@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Datalinks;
+use App\Internetlink;
 use App\Edumat;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
-class DatalinksController extends Controller
+class InternetlinkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class DatalinksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        $datalinks=Datalinks::all();
+    {
+        $internetlinks=Internetlink::all();
      
         
-        return view ('/edumatShow', compact('datalinks'));
+        return view ('/edumatShow', compact('internetlinks'));
     }
 
     /**
@@ -29,9 +29,9 @@ class DatalinksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
-    }
+    { 
+       //
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -41,24 +41,22 @@ class DatalinksController extends Controller
      */
     public function store(Request $request)
     {
-        $file= request('datalinks');
-        Storage::disk('public')->put($file, 'Contents');
-        Datalinks::create([
+        Internetlink::create([
             'edumat_id' => request('edumat_id'),
-            'datalinks' => request('datalinks')
+            'url'=> request('url')
         ]);
 
         return back();
+    
     }
 
-    
     /**
      * Display the specified resource.
      *
-     * @param  \App\Datalinks  $datalinks
+     * @param  \App\Internetlink  $internetlink
      * @return \Illuminate\Http\Response
      */
-    public function show(Datalinks $datalinks)
+    public function show(internetlink $internetlink)
     {
         //
     }
@@ -66,10 +64,10 @@ class DatalinksController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Datalinks  $datalinks
+     * @param  \App\Internetlink  $internetlink
      * @return \Illuminate\Http\Response
      */
-    public function edit(Datalinks $datalinks)
+    public function edit(internetlink $internetlink)
     {
         //
     }
@@ -78,10 +76,10 @@ class DatalinksController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Datalinks  $datalinks
+     * @param  \App\Internetlink  $internetlink
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Datalinks $datalinks)
+    public function update(Request $request, internetlink $internetlink)
     {
         //
     }
@@ -89,12 +87,12 @@ class DatalinksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Datalinks  $datalinks
+     * @param  \App\Internetlink  $internetlink
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Datalinks $datalink)
+    public function destroy(internetlink $internetlink)
     {
-        $datalink->delete();
+        $internetlink->delete();
 
         return back();
     }

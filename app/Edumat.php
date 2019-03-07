@@ -19,5 +19,10 @@ class Edumat extends Model
     {
        return $this->hasMany(Datalinks::class);
    }
+   
+   public function internetlinks()
+   {
+      return $this->hasMany(Internetlink::class);
+  }
 
 }

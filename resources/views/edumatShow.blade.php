@@ -7,29 +7,52 @@
 
 
 {{$edumat->content}}
+<a href="{{ asset('storage/javascript1.pptx')}}">{{ asset('storage/javascript1.pptx')}}</a>
 
-<a href="{{ asset('storage/javascript1.pptx')}}">tekst</a>
+ <?php echo asset('storage/{{$datalink->datalinks}}')?>
+    <table>
+        
+        @foreach ($edumat->datalinks as $datalink)
+            <tr>
+                   
+                <td> <a href="<?php asset('storage/{{$datalink->datalinks}}')?>"> {{$datalink->datalinks}}</a> <td>
+                        <form method="POST" action="/datalinks/{{$datalink->id}}">
+                            @method('DELETE')
+                            @csrf
+                        <button type="submit"><i class="far fa-trash-alt"></i></button> 
+                        </form>
+            </tr>   
+        @endforeach 
+    </table>
 
-
-<table>
-@foreach ($edumat->datalinks as $datalink)
-<tr>
-
-    <td><a href="{{$datalink->url}}"target="_blank">{{$datalink->url}}</a><td>
-            <form method="POST" action="/datalinks/{{$datalink->id}}">
-                @method('DELETE')
+            <form method="POST" action="/datalinks">
                 @csrf
-            <button type="submit"><i class="far fa-trash-alt"></i></button> 
-            </form>
-</tr>   
-@endforeach
-</table>
-<form method="POST" action="/datalinks">
-    @csrf
-    <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
-    <input type="text" name = "url" placeholder="url">
-    <button type="submit">add link</button>
-</form>
+                <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
+                <input type="file" name = "datalinks" placeholder="filename">
+                <button type="submit">add file</button>
+            </form> 
+
+
+    <table>
+        @foreach ($edumat->internetlinks as $internetlink)
+            <tr>
+
+                <td><a href="{{$internetlink->url}}"target="_blank">{{$internetlink->url}}</a><td>
+                        <form method="POST" action="/internetlink/{{$internetlink->id}}">
+                            @method('DELETE')
+                            @csrf
+                        <button type="submit"><i class="far fa-trash-alt"></i></button> 
+                        </form>
+            </tr>   
+        @endforeach
+    </table>
+
+        <form method="POST" action="/internetlink">
+            @csrf
+            <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
+            <input type="text" name = "url" placeholder="url">
+            <button type="submit">add link</button>
+        </form> 
 
 @endsection   
 
