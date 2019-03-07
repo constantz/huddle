@@ -13,7 +13,7 @@
     <tr>
         <td>{{$subject->name}}</td>
         <td>
-           <a href="/subjects/{{$subject->id}}/edit"><button><small><div>Wijzig</div></small></button></a>
+           <a href="/subjects/{{$subject->id}}/edit"><button><div>Wijzig</div></button></a>
         </td>
         <td>
             <form method="POST" action="/subjects/{{$subject->id}}">
@@ -26,12 +26,8 @@
    
 @endforeach
 </table>
-
-
-
-
-	
-<a href="/subjects/create"><h4><button>Nieuw</button></h4></a>
+<br>	
+<a href="/subjects/create"><h4><small><button>Nieuw vak</button></small></h4></a>
 	
 
 

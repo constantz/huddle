@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
-    <head><title>CodeGorilla</title>
+    <head>
+        <title>CodeGorilla</title>
+        <link rel=" stylesheet" href="css/welcome.css">
     </head>
     
     <body>
