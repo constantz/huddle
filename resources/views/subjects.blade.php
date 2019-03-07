@@ -11,7 +11,7 @@
 
 @foreach ($subjects as $subject)
     <tr>
-        <td>{{$subject->name}}</td>
+        <td><td><td><a href="/subjects/{{$subject->id}}">{{$subject->name}}</a></td>
         <td>
            <a href="/subjects/{{$subject->id}}/edit"><button><div>Wijzig</div></button></a>
         </td>

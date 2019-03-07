@@ -3,7 +3,7 @@
 
 
 @section('content')
-
+<?php use \App\Edumat; ?>
 
 <table>
 <tr>
@@ -11,7 +11,8 @@
 
 
 </tr>
-@foreach ($edumats as $edumat)
+
+@foreach (Edumat::where('subject_id',$subject->id)->get() as $edumat)
 <tr>
     <td><td><a href="/edumat/{{$edumat->id}}">{{$edumat->name}}</a></td>
     <td><a href="/edumat/{{$edumat->id}}/edit"><i class="far fa-edit"></i></a></td>  

@@ -7,29 +7,28 @@
 
 
 {{$edumat->content}}
-<a href="{{ asset('storage/javascript1.pptx')}}">{{ asset('storage/javascript1.pptx')}}</a>
-
- <?php echo asset('storage/{{$datalink->datalinks}}')?>
+<a href="/edumat/{{$edumat->id}}/edit"><i class="far fa-edit"></i></a></td> 
     <table>
         
         @foreach ($edumat->datalinks as $datalink)
             <tr>
                    
-                <td> <a href="<?php asset('storage/{{$datalink->datalinks}}')?>"> {{$datalink->datalinks}}</a> <td>
+                <td> <a href=" {{asset("storage/$datalink->datalinks")}}"> {{$datalink->datalinks}}</a> <td>
                         <form method="POST" action="/datalinks/{{$datalink->id}}">
                             @method('DELETE')
                             @csrf
                         <button type="submit"><i class="far fa-trash-alt"></i></button> 
-                        </form>
-            </tr>   
+                        </form> 
+            </tr>    
         @endforeach 
     </table>
 
             <form method="POST" action="/datalinks">
                 @csrf
+                <button type="submit">add file</button>
                 <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
                 <input type="file" name = "datalinks" placeholder="filename">
-                <button type="submit">add file</button>
+                
             </form> 
 
 
@@ -49,9 +48,10 @@
 
         <form method="POST" action="/internetlink">
             @csrf
+            <button type="submit">add link</button>
             <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
             <input type="text" name = "url" placeholder="url">
-            <button type="submit">add link</button>
+            
         </form> 
 
 @endsection   

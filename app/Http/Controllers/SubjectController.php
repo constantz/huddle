@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Subject;
+use \App\Edumat;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -59,7 +60,8 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
-        //
+        $edumats=Edumat::all();
+        return view('/edumat', compact('subject', 'edumats'));
     }
 
     /**

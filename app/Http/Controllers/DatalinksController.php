@@ -94,8 +94,11 @@ class DatalinksController extends Controller
      */
     public function destroy(Datalinks $datalink)
     {
+        
+        $file= $datalink->datalinks;
+        Storage::disk('public')->delete($file, 'Contents');
         $datalink->delete();
-
+      
         return back();
     }
 }
