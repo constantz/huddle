@@ -11,6 +11,9 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Styles -->
+
+        <link rel=" stylesheet" href="css/welcome.css">
+
         <style>
             html, body, footer {
                 background-color: #fff;
@@ -118,6 +121,7 @@
 }
           
         </style>
+>>>>>>> 6bd978acbbcb6c43d1b8f0258afc6be9437c934e
     </head>
     <body>
             
