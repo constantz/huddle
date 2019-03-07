@@ -20,28 +20,12 @@ Route::resource('/datalinks', 'DatalinksController');
 Route::resource('edumat', 'EdumatsController');
 Route::resource('/users', 'UsersController');
 Route::get('/users/edumatindex', 'EdumatsindexController@edumat');
-
-// dit maakt Route::resource impliciet al aan:
-// Route::get('/users', 'UsersController@index'); (werkt dus ook met /users)
 Route::get('/student', 'UsersController@studentIndex');
-//Route::get('/admin', 'UsersController@adminIndex');
 Route::resource('/usersSubject', 'UsersSubjectController');
 Route::get('/admin', 'UsersSubjectController@indexteacher');
 Route::get('/usdelete', 'UsersSubjectController@indexdelete');
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
-
-// Route::get('events', 'EventsController@index');
 Route::get('/timetable', 'TimetableController@index');
-// Route::get('/timetableindex', 'TimetableindexController@index')->middleware('admin');
 Route::resource('timetable', 'TimetableController');
-// Route::get('/timetable/create', 'TimetableController@create');
-// Route::post('/timetable', 'TimetableController@store');
-// Route::get('/timetable/{timetable}/edit', 'TimetableController@edit');
-// Route::patch('timetable/{timetable}', 'TimetableController@update');
-// Route::delete('/timetable/{timetable}', 'TimetableController@destroy');
