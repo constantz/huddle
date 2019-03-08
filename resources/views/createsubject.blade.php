@@ -2,6 +2,7 @@
 @extends('layout')
 
 @section('content')
+
 <h2>Maak hier een nieuw vak aan</h2>
 
 <form method="POST" action="/subjects">
@@ -15,6 +16,5 @@
         <br>
         <input type="SUBMIT" value="Submit">
 </form>
-
 
 @endsection

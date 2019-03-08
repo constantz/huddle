@@ -11,7 +11,7 @@
                 <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">lesmateriaal</a>
+                <a class="nav-link" href="{{url('/subjects')}}">lesmateriaal</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" a href="timetable">rooster</a>

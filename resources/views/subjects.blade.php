@@ -11,7 +11,8 @@
 
 @foreach ($subjects as $subject)
     <tr>
-        <td><td><td><a href="/subjects/{{$subject->id}}">{{$subject->name}}</a></td>
+        <td><a href="/subjects/{{$subject->id}}">{{$subject->name}}</a></td>
+        @if (Auth::user()->isAdmin == 1)
         <td>
            <a href="/subjects/{{$subject->id}}/edit"><button><div>Wijzig</div></button></a>
         </td>
@@ -22,13 +23,16 @@
                 <button type="submit"><small><div class="far fa-trash-alt"></div></small></button>
             </form>
         </td>
+        @endif
     </tr>
    
 @endforeach
 </table>
+
+@if (Auth::user()->isAdmin == 1)
 <br>	
 <a href="/subjects/create"><h4><small><button>Nieuw vak</button></small></h4></a>
-	
+@endif	
 
 
 @endsection

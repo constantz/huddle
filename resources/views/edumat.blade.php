@@ -13,21 +13,26 @@
 </tr>
 
 @foreach (Edumat::where('subject_id',$subject->id)->get() as $edumat)
-<tr>
-    <td><td><a href="/edumat/{{$edumat->id}}">{{$edumat->name}}</a></td>
-    <td><a href="/edumat/{{$edumat->id}}/edit"><i class="far fa-edit"></i></a></td>  
-<td>
-<form method="POST" action="/edumat/{{$edumat->id}}">
-    @method('DELETE')
-    @csrf
-<button type="submit"><i class="far fa-trash-alt"></i></button> 
-</form>
-</td>
-</tr>
+    <tr>
+        <td><a href="/edumat/{{$edumat->id}}">{{$edumat->name}}</a></td>
+
+        @if (Auth::user()->isAdmin == 1)  
+        <td><a href="/edumat/{{$edumat->id}}/edit"><i class="far fa-edit"></i></a></td>  
+        <td>
+            <form method="POST" action="/edumat/{{$edumat->id}}">
+                @method('DELETE')
+                @csrf
+            <button type="submit"><i class="far fa-trash-alt"></i></button> 
+            </form>
+        </td>
+        @endif
+    </tr>
 @endforeach
 </table>
 
-<a href="/edumat/create">Lesmateriaal toevoegen</a>
+    @if (Auth::user()->isAdmin == 1)
+        <a href="/edumat/create">Lesmateriaal toevoegen</a>
+    @endif
 
 
 
