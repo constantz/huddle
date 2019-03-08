@@ -2,9 +2,11 @@
 @extends('layout')
 
 @section('content')
-@if (Auth::user()->isAdmin == 1)
 
-    <?php use \App\Users_subject; ?>
+<?php use \App\Users_subject; ?>
+
+<?php if(auth()->user()->isAdmin == 1): ?>
+
         <h1 class="title">Students</h1>
 
     <table>
@@ -48,10 +50,7 @@
                 </tr>
             @endforeach
     </table>
-    
-@else
- hahaha je mag niet op deze pagina
-
-
-
+    <?php else: ?>
+    Deze pagina is alleen toegankelijk voor docenten
+    <?php endif; ?>
 @endsection
