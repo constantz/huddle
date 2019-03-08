@@ -15,7 +15,7 @@
             <td><a href="/edumat/{{$edumat->id}}">{{$edumat->name}}</a></td>
 
             @if (Auth::user()->isAdmin == 1)  
-            <td><a href="/edumat/{{$edumat->id}}/edit"><i class="far fa-edit"></i></a></td>  
+            <td><a href="/edumat/{{$edumat->id}}/edit"><button><div>wijzig</div></button></a></td>  
             <td>
                 <form method="POST" action="/edumat/{{$edumat->id}}">
                     @method('DELETE')

@@ -10,7 +10,7 @@
         {{$edumat->content}}
 
         @if (Auth::user()->isAdmin == 1)
-            <a href="/edumat/{{$edumat->id}}/edit"><i class="far fa-edit"></i></a></td> 
+            <a href="/edumat/{{$edumat->id}}/edit"><button><div>wijzig</div></button></a></td> 
         @endif
     </div>
 

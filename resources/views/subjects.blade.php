@@ -13,7 +13,7 @@
                 <td><a href="/subjects/{{$subject->id}}">{{$subject->name}}</a></td>
                 @if (Auth::user()->isAdmin == 1)
                 <td>
-                <a href="/subjects/{{$subject->id}}/edit"><button><div>Wijzig</div></button></a>
+                <a href="/subjects/{{$subject->id}}/edit"><button><div>wijzig</div></button></a>
                 </td>
                 <td>
                     <form method="POST" action="/subjects/{{$subject->id}}">
