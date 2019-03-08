@@ -11,60 +11,52 @@
 @endif
 <table>
 	@php ($i = 0)
-	<tr>
+	<tr>S
 		@foreach ($timetable as $time)
 		@if($i == 6)
 			<tr>
 		@endif
 			<td>
-				<button>terug</button>
-			</td>
-			@foreach ($timetable as $time)
-				<td>
-					<div class="card" style="width:150px; height:200px;">
-						<div class="card-title">
-							@if( \Carbon\Carbon::parse($time->date)->format('Y-d-m') === \Carbon\Carbon::today()->format('Y-d-m'))
-								{{ \Carbon\Carbon::parse($time->date)->format('Y') }}
-								<h4 style="color:red;">{{ \Carbon\Carbon::parse($time->date)->format('d M') }}</h4>
-								<p style="color:red;">
-									{{ \Carbon\Carbon::parse($time->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($time->end_time)->format('H:i') }}
-								</p>
-							@else	
-								{{ \Carbon\Carbon::parse($time->date)->format('Y') }}
-								<h4>{{ \Carbon\Carbon::parse($time->date)->format('d M') }}</h4>
-								<p>
-									{{ \Carbon\Carbon::parse($time->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($time->end_time)->format('H:i') }}
-								</p>
-							@endif	
-						</div>		
-						<div >	
-							<b>{{ $time->subject->name }}</b>
-						</div>
+				<div class="card" style="width:150px; height:200px;">
+					<div class="card-title">
+						@if( \Carbon\Carbon::parse($time->date)->format('Y-d-m') === \Carbon\Carbon::today()->format('Y-d-m'))
+							{{ \Carbon\Carbon::parse($time->date)->format('Y') }}
+							<h4 style="color:red;">{{ \Carbon\Carbon::parse($time->date)->format('d M') }}</h4>
+							<p style="color:red;">
+								{{ \Carbon\Carbon::parse($time->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($time->end_time)->format('H:i') }}
+							</p>
+						@else	
+							{{ \Carbon\Carbon::parse($time->date)->format('Y') }}
+							<h4>{{ \Carbon\Carbon::parse($time->date)->format('d M') }}</h4>
+							<p>
+								{{ \Carbon\Carbon::parse($time->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($time->end_time)->format('H:i') }}
+							</p>
+						@endif	
+					</div>		
+					<div >	
+						<b>{{ $time->subject->name }}</b>
 					</div>
-					@if (Auth::user()->isAdmin == 1)
-						<table>
-							<tr>
-								<td>	
-									<a href="/timetable/{{ $time->id }}/edit"><button>Wijzig</button></a>
-								</td>
-								<td>
-									<form method="POST" action="/timetable/{{ $time->id }}">
-										@method('delete')
-										@csrf
-										<button type="submit"><small><div class="far fa-trash-alt"></div></small></button>
-									</form>
-								</td>
-							</tr>
-						</table>	
-					@endif
-				</td>
-			@endforeach
-			<td>
-				<button>vooruit</button>
+				</div>
+				@if (Auth::user()->isAdmin == 1)
+					<table>
+						<tr>
+							<td>	
+								<a href="/timetable/{{ $time->id }}/edit"><button>Wijzig</button></a>
+							</td>
+							<td>
+								<form method="POST" action="/timetable/{{ $time->id }}">
+									@method('delete')
+									@csrf
+									<button type="submit"><small><div class="far fa-trash-alt"></div></small></button>
+								</form>
+							</td>
+						</tr>
+					</table>	
+				@endif
 			</td>
-			@if($i == 5)
-				</tr>	
-			@endif
+		@if($i == 5)
+			</tr>	
+		@endif
 			@php ($i = ($i < 5) ? $i + 1 : 0)		
 		@endforeach
 	<tr>
