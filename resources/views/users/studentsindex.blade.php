@@ -18,8 +18,7 @@
                 <tr>
                     <td>
                         @if ($user->isAdmin != 1)
-                            {{$user->name}} {{$user->preposition}} {{$user->lastname}}
-                        
+                            {{$user->name}} {{$user->preposition}} {{$user->lastname}} 
                     </td>
                     
                             @foreach (Users_subject::where('user_id',$user->id)->get() as $usersSubject)
@@ -50,7 +49,9 @@
                 </tr>
             @endforeach
     </table>
+
     <?php else: ?>
     Deze pagina is alleen toegankelijk voor docenten
     <?php endif; ?>
+    
 @endsection

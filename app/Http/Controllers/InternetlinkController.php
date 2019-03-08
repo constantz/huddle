@@ -19,8 +19,7 @@ class InternetlinkController extends Controller
     {
         $internetlinks=Internetlink::all();
      
-        
-        return view ('/edumatShow', compact('internetlinks'));
+            return view ('/edumatShow', compact('internetlinks'));
     }
 
     /**
@@ -46,8 +45,7 @@ class InternetlinkController extends Controller
             'url'=> request('url')
         ]);
 
-        return back();
-    
+            return back();
     }
 
     /**
@@ -94,6 +92,6 @@ class InternetlinkController extends Controller
     {
         $internetlink->delete();
 
-        return back();
+            return back();
     }
 }

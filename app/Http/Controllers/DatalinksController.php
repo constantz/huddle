@@ -19,8 +19,7 @@ class DatalinksController extends Controller
     { 
         $datalinks=Datalinks::all();
      
-        
-        return view ('/edumatShow', compact('datalinks'));
+            return view ('/edumatShow', compact('datalinks'));
     }
 
     /**
@@ -42,13 +41,14 @@ class DatalinksController extends Controller
     public function store(Request $request)
     {
         $file= request('datalinks');
+        
         Storage::disk('public')->put($file, 'Contents');
         Datalinks::create([
             'edumat_id' => request('edumat_id'),
             'datalinks' => request('datalinks')
         ]);
 
-        return back();
+            return back();
     }
 
     
@@ -96,9 +96,10 @@ class DatalinksController extends Controller
     {
         
         $file= $datalink->datalinks;
+
         Storage::disk('public')->delete($file, 'Contents');
         $datalink->delete();
       
-        return back();
+            return back();
     }
 }

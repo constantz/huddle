@@ -9,17 +9,18 @@
 
 <body>
 
-<div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            Rooster    
-        </div>
-        <div class="panel-body" >
-            {!! $calendar->calendar() !!}
-            {!! $calendar->script() !!}
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Rooster    
+            </div>
+            <div class="panel-body" >
+                {!! $calendar->calendar() !!}
+                {!! $calendar->script() !!}
+            </div>
         </div>
     </div>
-</div>
-@include("includes.footer")
+
+    @include("includes.footer")
 </body>
 </html>

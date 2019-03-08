@@ -17,8 +17,7 @@ class SubjectController extends Controller
     { 
         $subjects = \App\Subject::all();
 
-        return view('subjects', [ 'subjects' => $subjects]);
-        
+            return view('subjects', [ 'subjects' => $subjects]);   
     }
 
     /**
@@ -28,9 +27,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-
-     	return view('createsubject');
-
+     	    return view('createsubject');
     }
 
     /**
@@ -41,15 +38,11 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-
         Subject::create([
             'name' => request('name')
         ]);
 
-        return redirect('/subjects');
-
-    
-
+            return redirect('/subjects');
     }
 
     /**
@@ -61,7 +54,8 @@ class SubjectController extends Controller
     public function show(Subject $subject)
     {
         $edumats=Edumat::all();
-        return view('/edumat', compact('subject', 'edumats'));
+
+            return view('/edumat', compact('subject', 'edumats'));
     }
 
     /**
@@ -72,8 +66,8 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        // $subjects = Subject::all();
-            $subjects = $subject;
+        $subjects = $subject;
+
 			return view('editsubject', ['subjects' => $subjects]);
     }
 
@@ -87,9 +81,10 @@ class SubjectController extends Controller
     public function update(Request $request, Subject $subject)
     {
         $subject->name = request('name');
+        
         $subject->save();
 
-        return redirect('/subjects');
+            return redirect('/subjects');
     }
 
     /**
@@ -101,6 +96,7 @@ class SubjectController extends Controller
     public function destroy(Subject $subject)
     {
         $subject->delete();
-        return redirect('/subjects');
+
+            return redirect('/subjects');
     }
 }
