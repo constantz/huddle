@@ -11,7 +11,7 @@
 @endif
 <table>
 	@php ($i = 0)
-	<tr>S
+	<tr>
 		@foreach ($timetable as $time)
 		@if($i == 6)
 			<tr>
