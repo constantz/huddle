@@ -3,11 +3,19 @@
 
 @section('content')
 
-	<br>
-	<h3>Geplande lessen</h3>
-	<br>
-	<table>
-		<tr>
+<br>
+<h3>Geplande lessen</h3>
+<br>
+@if (Auth::user()->isAdmin == 1)
+	<a href="/timetable/create"><h4><button>Nieuwe les</button></h4></a>
+@endif
+<table>
+	@php ($i = 0)
+	<tr>
+		@foreach ($timetable as $time)
+		@if($i == 6)
+			<tr>
+		@endif
 			<td>
 				<button>terug</button>
 			</td>
@@ -54,10 +62,16 @@
 			<td>
 				<button>vooruit</button>
 			</td>
-		<tr>
-	</table>
-	<br><br>
-	@if (Auth::user()->isAdmin == 1)
-		<a href="/timetable/create"><h4><button>Nieuw</button></h4></a>
-	@endif
+			@if($i == 5)
+				</tr>	
+			@endif
+			@php ($i = ($i < 5) ? $i + 1 : 0)		
+		@endforeach
+	<tr>
+</table>
+<br><br>
+@if (Auth::user()->isAdmin == 1)
+	<a href="/timetable/create"><h4><button>Nieuwe les</button></h4></a>
+@endif
+<br><br><br><br><br>
 @endsection
