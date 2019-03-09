@@ -9,23 +9,21 @@ use App\Internetlink;
 
 class EdumatsController extends Controller
 {
-    public function index(){
-
+    public function index()
+    {
         $edumats=Edumat::all();
 
-    
-        return view('/edumat', compact('edumats'));
-        }
+            return view('/edumat', compact('edumats'));
+    }
 
     public function create()
     {
-        return view('/edumatCreate', compact('edumats'));
+            return view('/edumatCreate', compact('edumats'));
     }
 
    
     public function store(Request $request)
     {
-        
         Edumat::create([
             'subject_id' => request('subject_id'),
             'name' => request('name'),
@@ -38,14 +36,13 @@ class EdumatsController extends Controller
     
     public function show(Edumat $edumat)
     {
-       
-        return view('/edumatShow', compact('edumat', 'datalinks', 'internetlink'));
+            return view('/edumatShow', compact('edumat', 'datalinks', 'internetlink'));
     }
 
     
     public function edit(Edumat $edumat)
     {
-        return view('/edumatEdit', compact('edumat'));
+            return view('/edumatEdit', compact('edumat'));
     }
 
     

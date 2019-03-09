@@ -6,12 +6,16 @@
 <br>
 <h3>Geplande lessen</h3>
 <br>
+@if (Auth::user()->isAdmin == 1)
+	<a href="/timetable/create"><h4><button>Nieuwe les</button></h4></a>
+@endif
 <table>
+	@php ($i = 0)
 	<tr>
-		<td>
-			<button>terug</button>
-		</td>
 		@foreach ($timetable as $time)
+		@if($i == 6)
+			<tr>
+		@endif
 			<td>
 				<div class="card" style="width:150px; height:200px;">
 					<div class="card-title">
@@ -50,14 +54,16 @@
 					</table>	
 				@endif
 			</td>
+		@if($i == 5)
+			</tr>	
+		@endif
+			@php ($i = ($i < 5) ? $i + 1 : 0)		
 		@endforeach
-		<td>
-			<button>vooruit</button>
-		</td>
 	<tr>
 </table>
 <br><br>
 @if (Auth::user()->isAdmin == 1)
-	<a href="/timetable/create"><h4><button>Nieuw</button></h4></a>
+	<a href="/timetable/create"><h4><button>Nieuwe les</button></h4></a>
 @endif
+<br><br><br><br><br>
 @endsection

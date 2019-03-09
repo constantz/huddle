@@ -14,19 +14,15 @@ class UsersController extends Controller
      */
     public function studentIndex()
     {
-        // $students = \App\User::all();
-
         $students = User::where('isAdmin', null)->get();
                 
-        return view('users.students', compact('students'));
+            return view('users.students', compact('students'));
     }
     public function adminIndex()
     {
-        // $students = \App\User::all();
-
         $students = User::where('isAdmin', null)->get();
                 
-        return view('users.studentsindex', compact('students'));
+            return view('users.studentsindex', compact('students'));
         // "studentsindex" omdat het een lijst van studenten oplevert
     }
 
@@ -59,7 +55,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return view('users.show', compact('user'));
+            return view('users.show', compact('user'));
     }
 
     /**
