@@ -6,10 +6,9 @@
 
 @extends('layouts.app')
 @extends('layout')
-
 @section('content')
 
-<body>
+<body class="bgdashteach">
     
 
 <div class="container">
@@ -35,11 +34,15 @@
                 </div>
             </div> 
         </div>    
-</div>
+
+<img class="pichome" src="img/huddle2.png" width="300" height="600">  
+
+
 @endsection
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
 </body>

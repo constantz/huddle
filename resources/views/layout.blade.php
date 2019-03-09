@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>CodeGorilla</title>
+        <title>Huddle</title>
         <link rel=" stylesheet" href="css/welcome.css">
     </head>
     
@@ -11,7 +11,11 @@
         <div class="container">
             @yield('content')
         </div>
-            @include("includes.footer")  
+
+            @include('includes.footer')
+    
+
+           
     </body>
     
     
