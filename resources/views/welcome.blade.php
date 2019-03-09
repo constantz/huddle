@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <nav class="navbar fixed-top navbar-dark bg-warning"> 
+            <nav class="navbar fixed-top navbar-light bg-custom"> 
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
@@ -32,7 +32,10 @@
                 @endif
             </nav>
         </div>
-          <img class="pic" src="img/huddle2.png">   
+        <div class="owp">onderwijsplatform</div>
+          <img class="pic" src="img/huddle2.png" width="300" height="600"> <br>  
+            
+           
         <div class="footer">
             © 2019
         </div>     

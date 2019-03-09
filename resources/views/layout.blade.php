@@ -12,7 +12,7 @@
         <div class="container">
             @yield('content')
         </div>
-            @include("includes.footer")
+            @include('includes.footer')
     
     </body>
     
