@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request; 
 use \App\Edumat;
 use \App\Datalinks;
-use App\Internetlink;
+use \App\Internetlink;
+use \App\Subject;
 
 class EdumatsController extends Controller
 {
@@ -17,8 +18,9 @@ class EdumatsController extends Controller
     }
 
     public function create()
-    {
-            return view('/edumatCreate', compact('edumats'));
+    {   
+        $subjects = Subject::all();
+        return view('/edumatCreate', compact('edumats', 'subjects'));
     }
 
    
@@ -30,7 +32,7 @@ class EdumatsController extends Controller
             'content' =>request('content')
             ]);
 
-            return redirect('/edumat');
+            return redirect('/subjects');
     }
 
     
