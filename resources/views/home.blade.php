@@ -27,7 +27,7 @@
                             </div>
                         <?php else: ?>
                         <div class=”panel-body”>
-                            <a href="{{url('/usersSubject')}}">Student</a>
+                            <script>window.location.href = 'usersSubject';</script>
                         </div>
                         <?php endif; ?>
                     </div>
