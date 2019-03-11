@@ -54,13 +54,22 @@ class UsersSubjectController extends Controller
      */
     public function store(Request $request) 
      {
+        $validator = \Validator::make($request->all(), [
+            'subject_id'  => 'unique:users_subjects',
+            ]);
+        
+            if ($validator->fails())
+            {
+                return redirect()->action('UsersSubjectController@indexteacher');
+        }
+
         Users_subject::create([
             'user_id' => request('user_id'),
             'subject_id' => request('subject_id'),
             'passed'=> 0
             ]);
            
-                return redirect()->action('UsersSubjectController@indexteacher');
+            return redirect()->action('UsersSubjectController@indexteacher');
     }
 
     /**
