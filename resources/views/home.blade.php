@@ -35,8 +35,8 @@
             </div> 
         </div>    
 
-<img class="pichome" src="img/huddle2.png" width="300" height="600">  
-
+    <img class="pichome" src="img/huddle2.png" width="300" height="600">  
+</div>
 
 @endsection
 

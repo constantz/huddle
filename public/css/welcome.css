@@ -65,7 +65,7 @@ html, body{
     bottom: 0;
     width: 100%;
     height:10%;
-    background-color: #ffae00;
+    background-color: #f5801f;
     color: #000;
     text-align: center;
     padding: 25px 25px;
@@ -116,23 +116,24 @@ html, body{
     }
 
 .pichome{
-    position:absolute;
+    position:relative;
     top:3%;
     width:55%;
     height: auto;
-    margin-left: 40vw;
-    transform: rotate(283deg) translateY(19%) scaleX(0.45) scaleY(0.45) ;
+    margin-bottom: 0vh;
+    transform: rotate(283deg) translateY(75%) scaleX(0.45) scaleY(0.45) ;
     }
 
 .navbar{
-    background-color: rgb(0 ,0 ,20);
+    /* background-color: rgb(0 ,0 ,20); */
     z-index: 1;
     width:100%;
     height:10%;
     }
+
 .bg-custom{
-    background-color: #ffae00;
-}
+    background-color: #f5801f;
+    }
          
 .quote{
     position:absolute;
@@ -156,7 +157,7 @@ html, body{
     }
 
 .card-header{
-    background-color: #ffae00;
+    background-color: #f5801f;
     color: rgb(0 ,0 , 20);
     }
 
@@ -166,7 +167,7 @@ html, body{
     }   
     
 .btn{
-    background-color: #ffae00;
+    background-color: #f5801f;
     color: rgb(0 ,0 , 20);
     }
 
