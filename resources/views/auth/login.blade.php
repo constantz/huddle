@@ -2,8 +2,11 @@
 @extends('layouts.registercss')
 
 @section('content')
+<body class="bgdashteach">
+
+
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-custom">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -71,4 +74,10 @@
         </div>
     </div>
 </div>
+<div>
+<img class="pichome" src="img/huddle2.png" width="300" height="600"> 
+</div> 
+
 @endsection
+
+</body>
