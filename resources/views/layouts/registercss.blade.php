@@ -11,7 +11,7 @@
     
     <body>
         <div id="app">
-        <nav class="navbar navbar-expand-md navbar-custom bg-custom navbar-Laravel">
+        <nav class="navbar navbar-expand-md navbar-light bg-custom navbar-Laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
