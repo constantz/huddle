@@ -4,6 +4,7 @@
 @extends('layouts.registercss')
 @section('content')
 <body>  
+        <img class="pichome" src="img/huddle2.png" width="300" height="600">   
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">

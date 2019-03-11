@@ -3,7 +3,7 @@
 
 @section('content')
 <body class="bgdashteach">
-
+    <img class="pichome1" src="img/huddle2.png" width="300" height="600"> 
 
 <div class="container">
     <div class="row justify-content-custom">
@@ -74,9 +74,9 @@
         </div>
     </div>
 </div>
-<div>
-<img class="pichome" src="img/huddle2.png" width="300" height="600"> 
-</div> 
+
+
+
 
 @endsection
 

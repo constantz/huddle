@@ -9,7 +9,7 @@
 @section('content')
 
 <body class="bgdashteach">
-    
+      
 
 <div class="container">
         @if(\Session::has('error'))
@@ -34,12 +34,8 @@
                 </div>
             </div> 
         </div>    
-
-    <img class="pichome" src="img/huddle2.png" width="300" height="600">  
-</div>
-
 @endsection
-
+<img class="pichome" src="img/huddle2.png" width="300" height="600">   
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
