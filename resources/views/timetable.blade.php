@@ -7,7 +7,7 @@
 <h3>Geplande lessen</h3>
 <br>
 @if (Auth::user()->isAdmin == 1)
-	<a href="/timetable/create"><h4><button>Nieuwe les</button></h4></a>
+	<a href="/timetable/create"><h4><button class="btn">Nieuwe les</button></h4></a>
 @endif
 <table>
 	@php ($i = 0)
@@ -41,13 +41,13 @@
 					<table>
 						<tr>
 							<td>	
-								<a href="/timetable/{{ $time->id }}/edit"><button>Wijzig</button></a>
+								<a href="/timetable/{{ $time->id }}/edit"><button class="btn">Wijzig</button></a>
 							</td>
 							<td>
 								<form method="POST" action="/timetable/{{ $time->id }}">
 									@method('delete')
 									@csrf
-									<button type="submit"><small><div class="far fa-trash-alt"></div></small></button>
+									<button type="submit" class="btn"><small><div class="far fa-trash-alt"></div></small></button>
 								</form>
 							</td>
 						</tr>
@@ -63,7 +63,7 @@
 </table>
 <br><br>
 @if (Auth::user()->isAdmin == 1)
-	<a href="/timetable/create"><h4><button>Nieuwe les</button></h4></a>
+	<a href="/timetable/create"><h4><button class="btn">Nieuwe les</button></h4></a>
 @endif
 <br><br><br><br><br>
 @endsection
