@@ -80,7 +80,7 @@ html, body{
     top: 46%;
     z-index: 1;
     position:absolute;
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     text-align:right;
     transform: rotate(270deg) translateY(74.6vw) scaleY(1.7);
     letter-spacing: 0.26em;
