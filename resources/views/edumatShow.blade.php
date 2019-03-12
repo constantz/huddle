@@ -3,67 +3,79 @@
 
 
 @section('content')
+    
+
+<div class="container">
+    <div class="row">
+
+<div class="col-6">
     <h1> {{$edumat->name}}</h1>
-
-
+    <div class="table table-striped">
     {{$edumat->content}}
+    </div>
     @if (Auth::user()->isAdmin == 1)
-        <a href="/edumat/{{$edumat->id}}/edit"><i class="far fa-edit"></i></a></td> 
+        <button class="btn"><a href="/edumat/{{$edumat->id}}/edit">Wijzigen</a></button></td>
     @endif
-    <table>
+</div>
+
+<div class="col-4">
+    <div class="float">
+        <table class="table table-striped">
         
-        @foreach ($edumat->datalinks as $datalink)
-            <tr>
-                   
-                <td> <a href=" {{asset("storage/$datalink->datalinks")}}"> {{$datalink->datalinks}}</a> <td>
-                    @if (Auth::user()->isAdmin == 1)
-                    <td>    
-                    <form method="POST" action="/datalinks/{{$datalink->id}}">
-                            @method('DELETE')
-                            @csrf
-                        <button type="submit"><i class="far fa-trash-alt"></i></button> 
+            @foreach ($edumat->datalinks as $datalink)
+                <tr>                   
+                    <td><button class="btn1"><a class="black" href=" {{asset("storage/$datalink->datalinks")}}"> {{$datalink->datalinks}}</a> <td>
+                        @if (Auth::user()->isAdmin == 1)
+                        </button><td>    
+                        <form method="POST" action="/datalinks/{{$datalink->id}}">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn"><i class="far fa-trash-alt"></i></button> 
                         </form> 
                     </td>
-                    @endif    
-            </tr>    
-        @endforeach 
-    </table>
+                        @endif                
+                    </tr>    
+            @endforeach 
+        </table>
             @if (Auth::user()->isAdmin == 1)
                 <form method="POST" action="/datalinks">
                     @csrf
-                    <button type="submit">add file</button>
+                    <button type="submit" class="btn">add file</button>
                     <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
                     <input type="file" name = "datalinks" placeholder="filename">
                     
                 </form> 
             @endif
 
-    <table>
-        @foreach ($edumat->internetlinks as $internetlink)
-            <tr>
 
-                <td><a href="{{$internetlink->url}}"target="_blank">{{$internetlink->url}}</a><td>
-                    @if (Auth::user()->isAdmin == 1)
+        <table class="table table-striped">
+            @foreach ($edumat->internetlinks as $internetlink)
+                <tr>
+                    <td><button class="btn1"><a class="black" href="{{$internetlink->url}}"target="_blank">{{$internetlink->url}}</a></button><td>
+                        @if (Auth::user()->isAdmin == 1)
                     <td>     
-                    <form method="POST" action="/internetlink/{{$internetlink->id}}">
+                        <form method="POST" action="/internetlink/{{$internetlink->id}}">
                             @method('DELETE')
                             @csrf
-                        <button type="submit"><i class="far fa-trash-alt"></i></button> 
+                        <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button> 
                         </form>
                     </td>
                     @endif
-            </tr>   
-        @endforeach
-    </table>
+                </tr>   
+            @endforeach
+        </table>
 
-    @if (Auth::user()->isAdmin == 1)
-        <form method="POST" action="/internetlink">
-            @csrf
-            <button type="submit">add link</button>
-            <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
-            <input type="text" name = "url" placeholder="url">   
-        </form> 
-    @endif
+        @if (Auth::user()->isAdmin == 1)
+            <form method="POST" action="/internetlink">
+                @csrf
+            
+                <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
+                <input class="table table-striped" type="text" name = "url" placeholder="url">   
+                <button class="btn" type="submit">add link</button>
+            </form> 
+        @endif
     
 @endsection   
-
+</div>
+</div>
+</div>
