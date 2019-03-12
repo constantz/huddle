@@ -117,7 +117,7 @@ html, body{
     90% { transform: translate(-1px, 0px) rotate(1deg); }
     100% { transform: translate(1px, 1px) rotate(0deg); }
     }
-
+    
 
 .pichome{
     position:fixed;

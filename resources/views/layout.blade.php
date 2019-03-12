@@ -3,6 +3,7 @@
     <head>
         <title>Huddle</title>
         <link rel=" stylesheet" href="css/welcome.css">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
     </head>
     
     <body>
