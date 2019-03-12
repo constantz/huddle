@@ -20,7 +20,7 @@ class EdumatsController extends Controller
     public function create()
     {   
         $subjects = Subject::all();
-        return view('/edumatCreate', compact('edumats', 'subjects'));
+        return view('/edumatCreate', ['subjects' => $subjects], compact('edumats'));
     }
 
    
@@ -64,6 +64,6 @@ class EdumatsController extends Controller
     {
         $edumat->delete();
 
-            return redirect('/edumat');
+            return back();
     }
 }
