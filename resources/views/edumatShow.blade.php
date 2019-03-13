@@ -16,7 +16,7 @@
     @if (Auth::user()->isAdmin == 1)
         <button class="btn"><a href="/edumat/{{$edumat->id}}/edit">Wijzigen</a></button></td>
     @endif
-</div>
+</div>z
 
 <div class="col-4">
     <div class="float">

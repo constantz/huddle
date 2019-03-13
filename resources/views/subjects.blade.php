@@ -14,7 +14,7 @@
         @foreach ($subjects as $subject)
         
             <tr>
-                <td><button class="btn1"><a class="black" href="/subjects/{{$subject->id}}">{{$subject->name}}</a></button></td>
+                <td><a type="button" class="btn1 black" href="/subjects/{{$subject->id}}">{{$subject->name}}</a></td>
                 @if (Auth::user()->isAdmin == 1)
                 <td>
                 <a href="/subjects/{{$subject->id}}/edit"><button class="btn">wijzig</button></a>
