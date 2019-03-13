@@ -7,47 +7,59 @@
 
 <?php if(auth()->user()->isAdmin == 1): ?>
 
-        <h1 class="title">Students</h1>
+        <h2 class="title">Voortgang studenten</h2>
 
-    <table>
-                <tr>
-                    <th>Naam</th>
-                    <th>vakken</th>   
+    <table class="table-responsive table-striped ">
+        <thead>
+                <tr >
+                    <th class="trr">Naam</th>
+                    <th class="trr">Vakken</th>   
+                    <th class="trr"> </th>
+                    <th class="trr"> </th>
+                    <th class="trr"> </th>
                 </tr>
+        </thead>
             @foreach($user as $user)
+        <tbody>
                 <tr>
-                    <td>
+                    <td class="trr">
                         @if ($user->isAdmin != 1)
-                            {{$user->name}} {{$user->preposition}} {{$user->lastname}} 
+                            {{$user->name}} {{$user->preposition}} {{$user->lastname}}
                     </td>
                     
                             @foreach (Users_subject::where('user_id',$user->id)->get() as $usersSubject)
-                            <td>{{$usersSubject->subject->name}}</td>
-                    <td>
+                    <td class="trr">
+                        {{$usersSubject->subject->name}}
+                    </td>
+                    
                             <form  
                             method="POST" action="/usersSubject/{{$usersSubject->id}}" >
                                     @method('PATCH')
                                     @csrf
-
+                    
+                    <td class="trr">
                                     <label class="checkbox" $for="passed">  
-                                        <input type="checkbox" name="passed" onChange="this.form.submit()" {{$usersSubject->passed ? 'checked' : ''}}>      
-                                    </label> 
+                                        <input type="checkbox" name="passed" onChange="this.form.submit()" {{$usersSubject->passed ? 'checked' : ''}}>    
+                                    </label>
                             </form> 
-                    </td>   
-                    <td>
+                    </td>
+                    <td class="trr">
                             </form>
                             <form method="POST" action="/usersSubject/{{$usersSubject->id}}">
                                 @method('DELETE')
                                 @csrf
-                            <button type="submit"><i class="far fa-trash-alt"></i></button> 
+                            <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button> 
                             </form>
-                            </td>
+                    </td>
                             @endforeach
-                        <td><a href="/usersSubject/{{$user->id}}/edit">Vak toevoegen</a></td>  
+                    <td class="trr">
+                        <button class="btn1"><a class="black" href="/usersSubject/{{$user->id}}/edit">Vak toevoegen</a></button>
+                    </td>  
                         @endif
                     
                 </tr>
             @endforeach
+        </tbody>
     </table>
 
     <?php else: ?>

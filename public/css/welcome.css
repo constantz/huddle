@@ -1,6 +1,6 @@
 html, body{
     
-    background-image: linear-gradient(to right bottom, rgba(0,0,20,0.5), rgba(0,20,0,1));
+    background-image: linear-gradient(to right, rgba(0,0,20,0.5), rgba(0,20,0,1));
     max-width:100%;                   
     color: black;
     font-family: 'Nunito', sans-serif;
@@ -11,8 +11,8 @@ html, body{
 
 .bgdashteach{
     /* background: linear-gradient(90deg, #CBCBCF 80%, #000014 20%);       */
-    /* background: linear-gradient( to right,#cbcbcf, #cbcbcf 80%, #000014 80%, #000014 97%, #cbcbcf 97%, #cbcbcf); */
-    background-image: linear-gradient(to right bottom, rgba(0,0,20,0.5), rgba(0,20,0,1));
+    background: linear-gradient( to right,#cbcbcf, #cbcbcf 80%, #000014 80%, #000014 97%, #cbcbcf 97%, #cbcbcf);
+    /* background-image: linear-gradient(to right bottom, rgba(0,0,20,0.5), rgba(0,20,0,1)); */
 }
 .copyright{
     font-size: 0.8em;
@@ -43,7 +43,7 @@ html, body{
     }
 
 .title {
-    font-size: 84px;
+    font-size: 75px;
     }
 
 .links > a {
@@ -128,14 +128,14 @@ html, body{
     transform: rotate(283deg) translateY(105%) scaleX(0.45) scaleY(0.45) ;
     }
 
-    .pichome1{
-        position:fixed;
-        top:3%;
-        width:55%;
-        height:auto;
-        margin-left: 21vw;
-        transform: rotate(283deg) translateY(105%) scaleX(0.45) scaleY(0.45) ;
-        }    
+.pichome1{
+    position:fixed;
+    top:3%;
+    width:55%;
+    height:auto;
+    margin-left: 21vw;
+    transform: rotate(283deg) translateY(105%) scaleX(0.45) scaleY(0.45) ;
+    }    
 
 .navbar{
     /* background-color: rgb(0 ,0 ,20); */
@@ -170,7 +170,9 @@ html, body{
     width: 100%;
     }
 
-
+.card{
+    margin-left: 100px;
+}
 
 
 .card-header{
@@ -216,8 +218,19 @@ html, body{
 
 .container{
     margin-top: 0px;
-    margin-left: 10px;
+    margin-left: 5px;
     
 }
+.table-responsive{
+    background: white;
+    margin-left: 5vw;
+    border-radius: 5px;
+}
+
+.trr{
+    padding: 5px;
+}
+
+
 
         
