@@ -14,8 +14,12 @@
     <tbody>
     @foreach (Edumat::where('subject_id',$subject->id)->get() as $edumat)
         <tr>
-            <td><button class="btn1"><a class="black" href="/edumat/{{$edumat->id}}">{{$edumat->name}}</a></button></td>
+<<<<<<< HEAD
+            <td><a type="button" class="btn1 black" href="/edumat/{{ $edumat->id }}">{{ $edumat->name }}</a></td>
+=======
+            <td><a type = "button" class="btn1 black" href="/edumat/{{$edumat->id}}">{{$edumat->name}}</a></td>
 
+>>>>>>> 01dbf9a2576d2dcc3181996d1fa8d8fca2ffe300
             @if (Auth::user()->isAdmin == 1)  
             <td><a href="/edumat/{{$edumat->id}}/edit"><button class="btn"><div>wijzig</div></button></a></td>  
             <td>

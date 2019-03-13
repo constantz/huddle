@@ -52,16 +52,21 @@ class UsersSubjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) 
-     {
-        $validator = \Validator::make($request->all(), [
-            'subject_id'  => 'unique:users_subjects',
-            ]);
+    public function store(Request $request)
+    {
+        // $request->validate([
+        //     'subject_id'  => 'unique:users_subjects'
+        // ]);
+       
+        // ( array('email','name') );
+        // $validator = \Validator::make($request->all(), [
+        //     'subject_id'  => 'unique:users_subjects'
+        //     ]);
         
-            if ($validator->fails())
-            {
-                return redirect()->action('UsersSubjectController@indexteacher');
-        }
+        //     if ($validator->fails())
+        //     {
+        //         return redirect()->action('UsersSubjectController@indexteacher');
+        //     }
 
         Users_subject::create([
             'user_id' => request('user_id'),

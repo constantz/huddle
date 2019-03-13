@@ -14,9 +14,9 @@
     {{$edumat->content}}
     </div>
     @if (Auth::user()->isAdmin == 1)
-        <button class="btn"><a href="/edumat/{{$edumat->id}}/edit">Wijzigen</a></button></td>
+        <a type="button" class="btn" href="/edumat/{{$edumat->id}}/edit">Wijzigen</a></td>
     @endif
-</div>
+</div>z
 
 <div class="col-4">
     <div class="float">
@@ -42,7 +42,7 @@
                     @csrf
                     <button type="submit" class="btn">add file</button>
                     <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
-                    <input type="file" name = "datalinks" placeholder="filename">
+                    <input type="file" name = "datalinks" placeholder="filename" required>
                     
                 </form> 
             @endif
@@ -51,7 +51,7 @@
         <table class="table table-striped">
             @foreach ($edumat->internetlinks as $internetlink)
                 <tr>
-                    <td><button class="btn1"><a class="black" href="{{$internetlink->url}}"target="_blank">{{$internetlink->url}}</a></button><td>
+                    <td><a type= "button" class="btn1 black" href="{{$internetlink->url}}"target="_blank">{{$internetlink->url}}</a><td>
                         @if (Auth::user()->isAdmin == 1)
                     <td>     
                         <form method="POST" action="/internetlink/{{$internetlink->id}}">
@@ -70,7 +70,7 @@
                 @csrf
             
                 <input type="integer" name = "edumat_id" value="{{ $edumat->id }}" hidden>
-                <input class="table table-striped" type="text" name = "url" placeholder="url">   
+                <input class="table table-striped" type="text" name = "url" placeholder="url" required>   
                 <button class="btn" type="submit">add link</button>
             </form> 
         @endif
