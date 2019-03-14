@@ -11,8 +11,8 @@ html, body{
 
 .bgdashteach{
     /* background: linear-gradient(90deg, #CBCBCF 80%, #000014 20%);       */
-    background: linear-gradient( to right,#cbcbcf, #cbcbcf 80%, #000014 80%, #000014 97%, #cbcbcf 97%, #cbcbcf);
-    /* background-image: linear-gradient(to right bottom, rgba(0,0,20,0.5), rgba(0,20,0,1)); */
+    /* background: linear-gradient( to right,#cbcbcf, #cbcbcf 80%, #000014 80%, #000014 97%, #cbcbcf 97%, #cbcbcf); */
+    background-image: linear-gradient(to right bottom, rgba(0,0,20,0.5), rgba(0,20,0,1));
 }
 .copyright{
     font-size: 0.8em;
@@ -43,7 +43,8 @@ html, body{
     }
 
 .title {
-    font-size: 75px;
+    font-size: 4vw;
+    margin-left: 3vw;
     }
 
 .links > a {
@@ -58,7 +59,7 @@ html, body{
             
 .m-b-md {
     margin-bottom: 30px;
-    color: #cbcbcf;
+    color: rgb(0 ,0 ,20);
     text-shadow: 1px 1px 3px black;
     }
 
@@ -198,6 +199,7 @@ html, body{
 
 .table{
     margin-top: 50px;
+    margin-left: 2vw;
     background: #f3f3f4;
     width: 40vw;
     border-radius:5px;
@@ -229,8 +231,16 @@ html, body{
 
 .trr{
     padding: 5px;
+    margin-right: 10px;
 }
 
+.tr{
+    padding: 5px;
+}
 
+.input{
+    border-radius: 5px;
+    padding: 3px;
+}
 
         

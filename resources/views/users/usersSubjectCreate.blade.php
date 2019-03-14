@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('content')
-hallo
+
     @foreach($subjects as $subject)
         <form method="POST" action="/usersSubject">
             @csrf

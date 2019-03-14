@@ -5,11 +5,11 @@
 
 
 @section('content')
-
+<img class="pichome" src="img/huddle2.png" width="300" height="600">  
 <?php use \App\Users_subject; ?>
 
-<body class="bgdashteach">
-  <div class="title m-b-md">  
+<body>
+  <div class="title">  
       Welkom {{Auth::user()->name}}
   </div>
     <table class="table table-striped">

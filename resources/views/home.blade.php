@@ -8,7 +8,7 @@
 @extends('layout')
 @section('content')
 
-<body class="bgdashteach">
+<body>
 <img class="pichome" src="img/huddle2.png" width="300" height="600">        
 
 <div class="container">

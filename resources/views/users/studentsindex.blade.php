@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('content')
-
+<img class="pichome" src="img/huddle2.png" width="300" height="600">   
 <?php use \App\Users_subject; ?>
 
 <?php if(auth()->user()->isAdmin == 1): ?>
@@ -21,7 +21,7 @@
         </thead>
             @foreach($user as $user)
         <tbody>
-                <tr>
+                <tr class="tr">
                     <td class="trr">
                         @if ($user->isAdmin != 1)
                             {{$user->name}} {{$user->preposition}} {{$user->lastname}}
@@ -39,7 +39,7 @@
                     
                     <td class="trr">
                                     <label class="checkbox" $for="passed">  
-                                        <input type="checkbox" name="passed" onChange="this.form.submit()" {{$usersSubject->passed ? 'checked' : ''}}>    
+                                        <input class="input" type="checkbox" name="passed" onChange="this.form.submit()" {{$usersSubject->passed ? 'checked' : ''}}>    
                                     </label>
                             </form> 
                     </td>

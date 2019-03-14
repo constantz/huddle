@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('content')
-
+<img class="pichome" src="img/huddle2.png" width="300" height="600">  
     <table class="table table-striped">
         <thead>
         <tr>

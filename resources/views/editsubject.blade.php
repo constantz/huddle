@@ -2,6 +2,7 @@
 @extends('layout')
 
 @section('content')
+<img class="pichome" src="img/huddle2.png" width="300" height="600">  
     <h2>Wijzig hier het vak</h2>
 
     <form method="POST" action="/subjects/{{$subjects->id}}">
